@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- Next part is for new coomands -->
+        <script>
+          window.MathJax = {
+          tex: {
+            macros: {
+              sen: "\\operatorname{sen}",
+              seg: ["\\overrightarrow{#1}",1]
+            }
+          }
+        };
+        </script>
+    <!-- CSS -->
+
+      <link rel="stylesheet", href="styles.css" />
+
+  </head>
+
+    <!-- Top Menu    -->
+    <header class="main-header">
+      <h1 class="calculo-title"> Análisis Matemático UNO</h1>
+
+      <nav class="top-nav">
+        <ul>
+           <li> <a href="./Home.html"> Inicio  </a> </li>
+           <li> <a href="./InfoPrimerDia.html"> Información general </a> </li>
+           <li> <a href="./Secciones.html"> Secciones  </a> </li> 
+           
+           
+         </ul>
+       </nav>
+       <label class="switch">
+         <input type="checkbox" onclick="myFunction()">
+         <span class="slider"></span>
+       </label>
+  <!-- This part is for title in tab-->
+  <title>Inicio</title>
+    
+
+    </header>
+
+
+  <!-- Contenido inicia abajo -->
+  <body class="flexbox card fondo-body">
+
+
+
+    <h2> Profesor: Francisco J. Torres Ayala. </h2>
+    <h2> Ayudante: Raúl Rodríguez Barrera. </h2>
+    <h2> Ayudante 2: Luis Ángel Topete Galván. </h2>
+    <!--<h2> 2o Ayudante: Osvaldo Aparicio Hernández. </h2>-->
+
+
+
+
+    <div class="info-box">
+      <h3> Descripción </h3>
+      <p> De manera general, los temas que se cubrirán son:
+      </p>
+      <ul>
+        <li> Conjuntos. </li>
+        <li> Espacios métricos. </li>
+        <li> Continuidad. </li>
+        <li> Conexidad. </li>
+        <li> Completez. </li>
+        <li> Compacidad.</li>
+        <li> Espacios de funciones continuas. </li>
+      </ul>
+      <p>
+        En el menu de la parte superior, en Secciones, se presentarán las
+        partes en las que está divididad en curso. El tiempo
+        planeado para cada sección es una semana.
+      </p>
+
+
+
+      <h3> Bibliografía </h3>
+      El mejor libro es al que le entiendes. Dicho lo anterior...
+      <ul>
+        <li> Carothers. <i> Real Analysis. </i>  </li>
+        <li> Bartle. <i>Introducción al Análisis Matemático </i>. </li>
+        <li> Clapp.
+          <i>
+            <a href="http://lya.fciencias.unam.mx/tamariz/notas/notasam2011-1.pdf">
+              Análisis Matemático
+            </a>
+          </i>.
+        </li>
+        <li> Thomson-Bruckner^2.
+          <i>
+            <a href="http://classicalrealanalysis.info/documents/TBB-AllChapters-Landscape.pdf">
+            Elemtary Real Analysis.
+            </a>
+          </i>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    </div>
+
+
+  </body>
+
+</html>
