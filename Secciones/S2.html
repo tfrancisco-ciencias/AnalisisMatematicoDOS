@@ -81,16 +81,6 @@
       
 
 
-      <div class="lema-box">
-        <h2 class="number-title"> Lema </h2>
-        <p>
-            Existe una isometría lineal entre \(C[a,b]\) y \(C[0,1]\) que manda polinomios en 
-            plinomios.
-        </p>
-
-
-      </div>
-
 
       <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
@@ -108,6 +98,22 @@
       
 
 
+
+
+
+      <div class="lema-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+            Existe una isometría lineal entre \(C[a,b]\) y \(C[0,1]\) que manda polinomios en 
+            plinomios.
+        </p>
+        <p>
+          Nota: este lema nos dice que, para demostrar el Teorema de 
+          Weierstrass, es suficiente probarlo para el caso \(C[0,1]\).
+        </p>
+
+
+      </div>
 
     <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
@@ -409,8 +415,24 @@
           </li>
         </ol> 
       </p>
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Si \(f:[0,1]\to \mathbb{R}\) es una función acotada, 
+        prueba que 
+        \[
+        \lim_{n\to \infty}B_n(f)(x_0)=f(x_0)
+        \]
+        para todo punto \(x_0\in [0,1]\) donde 
+        la función \(f\) sea continua.
+      </p>
 
     </div>
+
 
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio</h2>
@@ -422,6 +444,20 @@
 
     </div>
 
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(f\in C[a,b]\) con la característica de que 
+        \(f(a)=0\). Prueba que existe una sucesión de polinomios 
+        \((q_n)_{n=1}^\infty\) tal que \(\lim_{n\to \infty}\|q_n-f\|_{[a,b]}=0\)
+        y que además cumple que \(q_n(a)=0\) para toda \(n\).
+      </p>
+      <p>
+        ¿Se puede cambiar \(a\) por cualquier otro punto en \([a,b]\)?
+      </p>
+
+    </div>
 
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio</h2>
@@ -460,7 +496,105 @@
     </div>
 
 
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Por \(C^\infty[a,b]\) denotamos al conjunto de 
+        funciones continuas en \([a,b]\) que admiten derivadas 
+        de todos los ordenes en \((a,b)\) y dichas derivadas 
+        tienen una extensión continua a \([a,b]\). 
+      </p>
+      <p>
+        Prueba que \(C^\infty[a,b]\) es denso en \(C[a,b]\).
+       </p>
 
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(f:[1,\infty) \to \mathbb{R} \)
+        una función continua con la propiedad de que 
+        \(\lim_{x\to \infty} f(x)\) existe. Prueba que 
+        para toda \(\varepsilon >0\) existe un polinomio 
+        \(p(x)\) tal que \(|f(x)-p(1/x)|< \varepsilon\),
+        para todo \(x\geq 1\).
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title" id="Ejer:AproxValorAbs"> Ejercicio </h2>
+      <p>
+        Este ejercicio prueba, sin usar la Teorema de aproximación 
+        de Weierstrass, la existencia de una 
+        sucesión de polinomios que aproxima a la 
+        función absoluto uniformemente en \([-1,1]\)
+      </p>
+      <ol>
+        <li>
+          Define, recursivamente, \(p_0=0\) y 
+          \(p_{n+1}(x)=p_n(x)+ (x-p_n(x)^2)/2\), 
+          para \(n \geq 0 \). Prueba que cada \(p_n\)
+          es un polinomio.
+        </li>
+        <li>
+          Prueba que \(0\leq p_n(x)\leq p_{n+1}(x)\leq \sqrt{x}\)
+          para todo \(x\in [0,1]\). Usa el 
+          <a href="./S1.html#Teo:Dini">Teorema de Dini </a>
+          para concluir que \((p_n)_{n=1}^\infty\) converge 
+          uniformemente a \(\sqrt{x}\) en \([0,1]\).
+        </li>
+        <li>
+          Finalmente prueba que la sucesión de 
+          polinomios \(p_n(x^2)\) converge uniformemente a 
+          \(|x|\) en \([-1,1]\).
+        </li>
+      </ol>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Este ejercicio da otra demostración del 
+        Teorema de Weierstrass.
+      </p>
+      <p>
+        Una función \(g:[a,b]\to \mathbb{R}\) se 
+        llama poligonal o lineal a trozos si es continua y 
+        existe 
+        \(\{a=t_0< \cdots < t_n=n\}\), una partición de 
+        \([a,b]\), tal que la gráfica de \(g\) restringida a cada 
+        \([t_{i-1},t_i]\) es un segmento de recta.
+      </p>
+      <ol>
+        <li>
+          Prueba que el conjunto de funciones pologonales 
+          es uniformemente denso en \(C[a,b]\). Hint: usa 
+          que toda función en \(C[a,b]\) es uniformemente contina 
+          en \([a,b]\).
+        </li>
+        <li>
+          Prueba que toda función poligonal 
+          puede escribirse de la forma 
+          \(\sum_{k=1}^m m_k|x-x_i|+ cx+d\)
+        </li>
+
+        <li>
+          Finalmente  usa el <a href="#Ejer:AproxValorAbs"> Ejercicio 2.17</a>
+          para probar que el conjunto de 
+          polinomios es uniformemente denso en 
+          \(C[a,b]\).
+        </li>
+      </ol>
+        
+      
+
+
+    </div>
 
     </div>
   </body>
