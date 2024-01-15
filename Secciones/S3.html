@@ -73,25 +73,162 @@
 
   <body class="flexbox card fondo-body">
 
-    <h1 class="number-title flexbox"> Conjuntos </h1>
+    <h1 class="number-title flexbox"> El Teorema de Stone-Weirestrass </h1>
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
     <div class="flexbox">
       
 
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Un espacio vectorial, \(A\), se llama un álgebra 
+          si tiene definida una multiplicación \(A\times A \to A\),
+          \((f,g)\mapsto fg\) que satisface, 
+          para todos \(f,g,h\in A\), \(t\) escalar:
+          <ol>
+            <li>
+              \((fg)h=f(gh)\).
+            </li>
+            <li>
+              \(f(g+h)=fg+fh\), \((g+h)f=gf+hf\).
+            </li>
+            <li>
+              \(t(fg)=(tf)g=f(tg)\), 
+            </li>
+          </ol>
+        </p>
+
+        <p>
+          El álgebra se llama conmutativa si \(fg=gf\) 
+          para todos \(f,g\in A\). Decimos que el álgebra 
+          tiene identidad (o uno) si existe un elemento, denotado \(e\)
+          o \(1_A\), que satisface, \(f1_A=f=1_Af\), para toda \(f\in A\).
+        </p>
+
+        <p>
+          Si además \(A\) es un espacio vectorial normado 
+          decimos que \(A\) es una álgebra normada si 
+          \[
+          \|fg\|\leq \|f\|\|g\|
+          \]
+          para todos \(f,g\in A\). Si \((A,\|\cdot\|)\)
+          es completo decimos que \(A\) es una álgebra de Banach.
+        </p>
+        <h3>Ejemplos </h3>
+        <ul>
+          <li>
+            \(\mathbb{R}\) con la métrico usual es una 
+            álgebra de Banach conmutativa con uno.
+          </li>
+          <li>
+            En \(\mathbb{R}^n\) consideramos la multiplicación 
+            entrada por entrada 
+            \[
+            (x_1,\dots, x_n)\cdot (y_1,\dots, y_n)=(x_1y_1,\dots, x_ny_n)
+            \]
+            con la norma 
+            \[
+            \|(x_1,\dots, x_n)\|=\max_{i=1,\dots, n}\{|x_i| \}
+            \]
+            es una álgebra de Banach conmutativa con uno.
+          </li>
+          <li>
+            Las matrices con coeficientes reales en 
+            \(n\times n\), denotada \(M_n(\mathbb{R})\), 
+            con la multiplicación usual de matrices, es una 
+            álgebra NO conmutativa con unidad.
+          </li>
+          <li>
+            Sea \(X\ne \emptyset \) un conjunto. Denotamos 
+            \[
+            B(X)=\{f:X\to \mathbb{R}: \textrm{\(f\) es acotada en \(X\) }\}
+            \]
+            Dotado con la multiplicación usual de funciones 
+            \(B(X)\) es una álgebra conmutativa con uno. Si consideramos 
+            la norma infinito o la norma del supremo
+            \[
+            \|f\|_X=\sup_{x\in X}\{ |f(x)|\}
+            \]
+            entonces un espacio  de Banach
+            (ver <a href="https://tfrancisco-ciencias.github.io/AnalisisMatematicoUNO/Secciones/S10.html#Teo:AcotadasEspacioBanach">Análisis UNO, Teorema 10.4</a>). 
+            También se puede denotar 
+            \(\|f\|_X=\|f\|_\infty\).
+            <p>
+            Afirmamos que \(B(X)\) es una álgebra 
+            de Banach. Lo único que resta probar 
+            que \(\|fg\|_\infty\leq \|f\|_\infty\|g\|_\infty\). Pero por definción 
+            de la norma, \(|f(x)|\leq \|f\|_\infty, |g(x)|\leq \|g\|_\infty\),
+            para toda \(x\in X\) y multiplicando las desigualdades 
+            tenemos 
+            \[ 
+            |(fg)(x)|=|f(x)||g(x)|\leq \|f\|_\infty\|g\|_\infty
+            \] 
+            así que 
+            \(\|f\|_\infty\|g\|_\infty\) es cota superior de 
+            \(\{|(fg)(x)|:x\in X\}\), por lo tanto de la 
+            definición de la norma del supremo: \(\|fg\|_\infty\leq \|f\|_\infty\|g\|_\infty\). 
+            </p>
+          </li>
+        </ul>
+      </div>
 
 
         <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
+           <p>
+            Sea \((A,\|\cdot\|)\) una álgebra normada.
+            <ol>
+              <li>
+                Prueba que para todos \(f,g,h,k\in A\)
+                \[
+                \|fg-hk \|\leq \|f\| \| g-k\| + \|k\| \|f-h\|
+                \]
+              </li>
+              <li>
+                Prueba que la operación multiplicación, \(A\times A \to A\),
+                es continua. Es decir, si \(\lim_{n\to \infty} f_n=f\),
+                \(\lim_{n\to \infty}g_n=g\) en \(A\) entonces 
+                \(\lim_{n\to \infty} f_ng_n=fg\).
+              
+              </li>
+            </ol>
+           </p>
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Prueba que si \(A\) es infinito y \(B\) es contable
-              entonces \(A\) y \(A\cup B\) son equivalentes.
+              Prueba que \(C^{(1)}[a,b]\) es una álgebra de Banach 
+              si la consideramos con la norma 
+              \[
+              \|f\|= \|f\|_{_\infty}+ \|f'\|_{_\infty}
+              \]
+            </p>
+
+          </div>
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición  </h2>
+            <p>
+              Sea \(A\) una álgebra.  Un subconjunto
+               \(B\subseteq A\) es una subalgebra si, con las 
+               mismas operaciones de \(A\) restringidas a 
+               \(B\), \(B\) resulta a su vez una álgebra.
             </p>
             <p>
-              Sugerencia: usar el ejercicio anterior para "acomodar"
-              a \(B\) en una parte de \(A\).
+              Por ejemplo si \((X,d)\) es un espacio métrico compacto 
+              y denotamos 
+              
+              \[
+              C(X)=\{f:X\to \mathbb{R}: \textrm{\(f\) es continua en \(X\)} \}
+              \] 
+              entonces, con las operaciones usuales de funciones, 
+              \(C(X)\) es una subalgebra de \(B(X)\) (las funciones acotadas).
             </p>
+
           </div>
 
 

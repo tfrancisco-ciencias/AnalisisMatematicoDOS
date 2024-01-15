@@ -437,6 +437,18 @@
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio</h2>
       <p>
+        Prueba que si \(f:[0,1]\to \mathbb{R}\)
+        es clase \(C^1\) en \([a,b]\) entonces 
+        \((B_n(f)')_{n=1}^\infty\) converge uniformemente a \(f'\)
+        en \([0,1]\).
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
         Dada \(f\in C[a,b]\) y \(\varepsilon >0\) prueba que existe un 
         polinomio con coeficientes racionales, \(q(x)\), tal que \(\|f-q\|_\infty < \varepsilon \). Concluye que 
         \(C[a,b]\), con la norma \(\|\cdot \|_\infty\), es separable.
@@ -557,11 +569,7 @@
 
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Este ejercicio da otra demostración del 
-        Teorema de Weierstrass.
-      </p>
+      <h2 class="number-title" id="Ejer:RepreFunPoligonales"> Ejercicio </h2>
       <p>
         Una función \(g:[a,b]\to \mathbb{R}\) se 
         llama poligonal o lineal a trozos si es continua y 
@@ -570,31 +578,118 @@
         \([a,b]\), tal que la gráfica de \(g\) restringida a cada 
         \([t_{i-1},t_i]\) es un segmento de recta.
       </p>
+      <p>
+        Para \(t\in \mathbb{R}\) define 
+        \[
+        L_t(x)=
+        \left\{ 
+        \begin{array}
+        0 0 & x\leq t \\
+        x-t & x > t 
+        \end{array}
+        \right.
+        \]
+      </p>
       <ol>
         <li>
-          Prueba que el conjunto de funciones pologonales 
+          Prueba que \(L_t(x)=\frac{1}{2}( x-t+ |x-t|)\)
+        </li>
+        <li>
+          Sea \(g:[a,b]\to \mathbb{R}\) una función 
+          poligonal, con partición 
+          \(\{a=t_0 < \cdots < t_n=b\}\). 
+          Prueba que existen constantes \(c_1,\dots, c_n\)
+          para las cuales 
+          \[ 
+          g(x)=g(a)+ c_1L_{t_1}(x)+\cdots + c_{n-1}L_{t_{n-1}}(x)
+          \]
+        </li>
+        <li>
+          Concluye que toda función poligonal se puede 
+          escribir de la forma 
+          \[
+          Cx+D+ \sum_{k=1}^n C_k|x-t_k|
+          \]
+          para ciertas constantes \(C,D,C_k\).
+        </li>
+      </ol>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Este ejercicio da otra demostración del 
+        Teorema de Weierstrass.
+      </p>
+      
+      <ol>
+        
+
+        <li>
+           Dados \(C,t\in \mathbb{R}\) denota  
+           \[
+           h(x)=C|x-t|
+           \] 
+           Usa el ejercicio 
+           <a href="#Ejer:AproxValorAbs"> Ejercicio</a> 
+           para probar que dado un subintervalo 
+           \([a,b]\) y 
+           \(\varepsilon> 0\) 
+           existe un polinomio \(p(x)\)
+           tal que 
+           \[
+           \|p-h\|_{[a,b]} < \varepsilon.
+           \]
+        </li>
+        <li>
+          Prueba que el conjunto de funciones poligonales 
           es uniformemente denso en \(C[a,b]\). Hint: usa 
           que toda función en \(C[a,b]\) es uniformemente contina 
           en \([a,b]\).
         </li>
         <li>
-          Prueba que toda función poligonal 
-          puede escribirse de la forma 
-          \(\sum_{k=1}^m m_k|x-x_i|+ cx+d\)
-        </li>
-
-        <li>
-          Finalmente  usa el <a href="#Ejer:AproxValorAbs"> Ejercicio 2.17</a>
-          para probar que el conjunto de 
-          polinomios es uniformemente denso en 
-          \(C[a,b]\).
+          Finalmente usando el  
+          <a href="#Ejer:RepreFunPoligonales"> Ejercicio</a>
+          prueba que el conjunto de 
+         polinomios es uniformemente denso en 
+         \(C[a,b]\).
         </li>
       </ol>
-        
-      
+    </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Teorea de Korovkin</h3>
+      <p>
+        Una función lineal \(A:C[0,1]\to C[0,1]\) 
+        se llama positiva si manda funciones no negativas 
+        a funciones no negativas, es decir, si 
+        \(f\geq 0\) entonces \(Af \geq 0\).
+      </p>
+      <p>
+        Sea \((A_n:C[0,1]\to C[0,1])_{n=1}^\infty\) 
+        una sucesión de funciones lineales positivas 
+        con la propiedad de que 
+        \[
+        \lim_{n\to \infty}\|A_nf_i - f_i \|_{[0,1]}=0
+        \]
+        donde \(f_i(x)=x^i\), \(i=0,1,2\). 
+     </p>
+     <p>
+      Entonces para toda \(f\in C[0,1]\) se cumple que 
+      \[
+      \lim_{n\to \infty}\|A_nf - f \|_{[0,1]}=0
+      \]
+      </p>
 
 
     </div>
+
+
+
+
 
     </div>
   </body>
