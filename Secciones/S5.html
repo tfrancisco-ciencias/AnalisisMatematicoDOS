@@ -73,7 +73,7 @@
 
   <body class="flexbox card fondo-body">
 
-    <h1 class="number-title flexbox"> Conjuntos </h1>
+    <h1 class="number-title flexbox"> La integral de Riemann-Stieltjes  </h1>
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
@@ -81,15 +81,18 @@
 
         
 
-        <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema  </h2>
+            
             <p>
-              Prueba que si \(A\) es infinito y \(B\) es contable
-              entonces \(A\) y \(A\cup B\) son equivalentes.
-            </p>
-            <p>
-              Sugerencia: usar el ejercicio anterior para "acomodar"
-              a \(B\) en una parte de \(A\).
+             Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente.
+             Una función acotada \(f:[a,b]\to \mathbb{R}\) está 
+             en \(\mathcal{R}_\alpha[a,b]\) si y sólo si 
+             para toda \(\varepsilon >0\), existe una partición 
+             \(P\) de \([a,b]\) tal que 
+             \[
+             U(f,P)-L(f,P) < \varepsilon 
+             \]
             </p>
           </div>
 

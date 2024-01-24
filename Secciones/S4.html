@@ -73,7 +73,7 @@
 
   <body class="flexbox card fondo-body">
 
-    <h1 class="number-title flexbox"> Conjuntos </h1>
+    <h1 class="number-title flexbox"> Funciones de variación acotada  </h1>
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
@@ -81,19 +81,74 @@
       
 
 
-        <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
+        <div class="teorema-box">
+            <h2 class="number-title" id="Teo:CompletezVarAcotada"> Teorema </h2>
             <p>
-              Prueba que si \(A\) es infinito y \(B\) es contable
-              entonces \(A\) y \(A\cup B\) son equivalentes.
+              El espacio \(BV[a,b]\) es completo con la norma 
+              \[
+              \|f\|_{BV}=|f(a)|+V_a^b(f)
+              \]
             </p>
-            <p>
-              Sugerencia: usar el ejercicio anterior para "acomodar"
-              a \(B\) en una parte de \(A\).
-            </p>
+            
           </div>
 
           
+
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Dada \(f\in BV[a,b]\) define \(v:[a,b]\to \mathbb{R}\) por 
+          \begin{eqnarray*} 
+          v(x)=V_a^x(f)
+          \end{eqnarray*}
+          Entonces tanto \(v\) como \(v-f\) son monótonas crecientes.
+        </p>
+        <p>
+          Por lo tanto, \(f=v-(v-f)\) es una diferencia de funciones 
+          monótonas crecientes.
+        </p>
+
+       </div>   
+
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema de descomposición de Jordan</h3>
+        <p>
+          Una función \(f:[a,b]\to \mathbb{R}\) es de 
+          variación acotada si y sólo si puede escribirse como 
+          una diferencia de funciones monótonas crecientes.
+        </div>
+
+      </div>
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Primer Teorema de Helly</h3>
+        <p>
+          Sea \((f_n)_{n=1}^\infty\subseteq BV[a,b]\) con la 
+          propiedad de que existe \(K>0\) tal que 
+          \(\|f\|_{BV}\leq K\) para toda \(n\).
+        </p>
+        <p>
+          Entonces existe una subsucesión de \((f_n)_{n=1}^\infty\)
+          y una función \(f\in BV[a,b]\) tal que 
+          \((f_n)_{n=1}^\infty\) converge puntualmente a \(f\) en \([a,b]\).
+        </p>
+
+
+
+      </div>
+
+
+
+
+
+
+       
+
     </div>
   </body>
 

@@ -81,7 +81,7 @@
       
 
       <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
+        <h2 class="number-title" id="Def:Algebra"> Definición </h2>
         <p>
           Un espacio vectorial, \(A\), se llama un álgebra 
           si tiene definida una multiplicación \(A\times A \to A\),
@@ -230,6 +230,369 @@
             </p>
 
           </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Considera el álgebra \(\mathbb{R}^2\) con las operaciones 
+              puntuales (ver ejemplos en <a href="#Def:Algebra"> Definición 3.1</a>).
+            </p>
+            <p>
+              Prueba que las únicas subálgebras de \(\mathbb{R}^2\) son 
+              \(\{(0,0)\}\), \(\{(x,0): x\in \mathbb{R}\}\), \(\{ (0,y): y\in \mathbb{R}\}\) 
+              y  \(\{(x,x):x\in \mathbb{R}\}\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((X.d)\) un espacio métrico. Recuerda que 
+              una función, \(f:X\to \mathbb{R}\), es  
+              Lipschitz si existe una constante \(M>0 \) 
+              (que depende de \(f\)) tal que 
+              \[
+              |f(x)-f(y)|\leq Md(x,y)
+              \]
+              para todos \(x,y\in X\). Por \(Lip(X)\)
+              denotamos al conjunto de funciones Lipschitz 
+              de \(X\) en \(\mathbb{R}\).
+            </p>
+            <p>
+              Prueba que \(Lip(X)\) es una subálgebra de \(C(X)\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((A,\|\cdot\|)\) una álgebra normada y 
+              \(B\subseteq A\) una subálgebra. Prueba que la cerradura 
+              \(\overline{B}\) es también una subálgebra de \(A\).
+            </p>
+
+
+          </div>
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Una retícula o latice es un conjunto 
+              parcialmente ordenado \((L, \leq )\)
+              en donde para todos \(a,b\in L\) existe 
+              el supremo e ínfirmo del conjunto \(\{a,b \}\). 
+              Es decir, existen elementos en \(L\), 
+              denotados   \(a\vee b\),
+              \(a\wedge b\) que satisfacen:
+              <ol>
+                <li>
+                  \(a\wedge b \leq a, b \leq a\vee b\),
+                </li>
+                <li>
+                  si \(a\leq c, b\leq c\) entonces \(a\vee b \leq c\),
+                </li>
+                <li>
+                  si \(d\leq a, d\leq c\) entonces \(d \leq a\wedge b\).
+                </li>
+              </ol>
+            </p>
+            <h3> Ejemplos </h3>
+            <ul>
+              <li>
+                Sea \(S\) un conjunto no vacío  y \(L\) la potencia de 
+                \(S\). En \(L\) consideramos el orden parcial dado por la contención,
+                es decir \( A \leq B \) sii \(A\subseteq B\). Entonces 
+                \((L,\leq )\) es una retícula pues dados \(A,B\in L\) tenemos 
+                \begin{eqnarray*} 
+                  A\vee B = A\cup B, \\
+                  A\wedge B = A\cap B.
+                \end{eqnarray*}
+              </li>
+              <li>
+                Sea \(X\) un conjunto no vacío y 
+                por \(F(X)\) denotamos al conjunto de todas 
+                las funciones de \(X\) en \(\mathbb{R}\). En \(F(X)\)
+                consideramos el orden parcial dado por 
+                \(f\leq g\) sii \(f(x)\leq g(x)\) para todo \(x\in X\).
+                Entonces \((F(X),\leq )\) es una retícula pues 
+                \begin{eqnarray*} 
+                (f\vee g)(x)=\max\{f(x),g(x)\}, \\
+                (f\wedge g)(x)=\min\{f(x),g(x) \}.
+                \end{eqnarray*}
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico y consideramos 
+              \((B(X), \|\cdot\|_\infty)\) el espacio vectorial 
+              normado de funciones acotadas de \(X\) en 
+              \(\mathbb{R}\).
+            </p>
+            <p>
+              Si \(L\subseteq B(X)\) es una retícula, prueba que 
+              \(\overline{L}\) también es una retícula.
+            </p>
+
+          </div>
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Sea \(X\) un conjunto no vacío y \(\mathcal{F}\) una familia de funciones 
+              de \(X\) en \(\mathbb{R}\).  
+              <ol>
+                <li>
+                  Decimos que \(\mathcal{F}\) no se anula en 
+                  \(X\) si para todo \(x\in X\) existe 
+                  \(f\in \mathcal{F}\) tal que \(f(x)\ne 0\).
+
+                </li>
+                <li>
+                  Decimos que \(\mathcal{F}\) separa los puntos 
+                  de \(X\) si para todos \(x,y\in X\) existe 
+                  \(g \in \mathcal{F}\) tal que \(g(x)\ne g(y)\).
+                </li>
+              </ol>
+
+            </p>
+
+          </div>
+
+
+           <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <ol>
+              <li>
+                Considera la familia 
+                \[
+                \mathcal{F}=\{f:[-1,1] \to \mathbb{R}: f(0)=0 \}
+                \]
+                Prueba que \(\mathcal{F}\) separa los puntos de \(\mathcal{F}\)
+                pero se anula en \([-1,1]\).
+              </li>
+
+            <li>
+              Para \(n=1,2,\dots\) denota \(f_n:\mathbb{R} \to \mathbb{R}\)
+              tal que \(f_n(x)=n\). Prueba que la familia 
+              \(\mathcal{F}=\{f_n: n=1,2,\dots\}\) no se anula pero no separa 
+              los puntos de \(\mathbb{R}\).
+            </li>
+            </ol>
+          
+           </div> 
+
+
+
+           <div class="lema-box">
+            <h2 class="number-title"> Lema </h2>
+            <p>
+              Sea \(X\) un conjunto no vacío y 
+              \(\mathcal{F}\) una  familia de funciones
+              de \(X\) en \(\mathbb{R}\). Decimos que 
+              \(\mathcal{F}\) distingue 
+              los puntos de \(X\) si para todos \(x,y\in X\) y 
+              \(a,b\in \mathbb{R}\) existe \(f\in \mathcal{F}\)
+              tal que \(f(x)=a\) y \(f(y)=b\).
+            </p>
+            <p>
+              Prueba que si \(\mathcal{F}\) no se anula en \(X\)
+              y separa los puntos de \(X\) entonces 
+              \(\mathcal{F}\) distingue los puntos de \(X\).
+            </p>
+           </div>
+
+
+           <div class="lema-box">
+            <h2 class="number-title"> Lema </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico compacto. Si 
+              \(L \subseteq C(X)\) es una retícula que distingue los 
+              puntos de \(X\) entonces \(L\) es densa en \((C(X),\|\cdot\|_\infty)\).
+            </p>
+
+           </div>
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <h3> Caso real </h3>
+            <p>
+                Sea \((X,d)\) un espacio métrico compcto y sea 
+                \(A \subseteq C(X)\) una subálgebra de funciones 
+                que satisface:
+                <ol>
+                  <li>
+                    separa los  puntos de \(A\),
+                  </li>
+                  <li>
+                    no se anula en \(X\).
+                  </li>
+                </ol>
+            </p>
+            <p>
+              Entonces \(A\) es densa en \( ( C(X),\|\cdot\|_\infty)\).
+            </p>
+
+          </div>
+
+          <div class="coro-box">
+            <h2 class="number-title"> Corolario </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico compacto. Entonces 
+              \((C(X), \|\cdot\|_\infty)\) es separable.
+            </p>
+
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Prueba que el espacio vectorial normado de las funciones 
+              acotadas 
+              \((B([0,1]), \|\cdot\|_\infty))\),
+              no es separable. 
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(K\subseteq \mathbb{R}^n\) un subconjunto 
+              compacto. Prueba que el conjunto de 
+              todos los polinomios en \(n\)-variables 
+              es denso en \(C(K)\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sean \(X,Y\) dos espacios métricos compactos. 
+              Considera el subconjunto \(S\) de \(C(x)\) 
+              formado por las funciones de la forma 
+              \(f(x,y)=g(x)h(y)\), donde \(g\in C(X), h\in C(Y)\).
+            </p>
+            <p>
+              Sea \(A\) es espacio vectorial generado por \(S\). Prueba 
+              que \(A\) es denso en \(C(X\times Y)\).
+            </p>
+
+          </div>
+
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico compcto y sea 
+              \(A \subseteq C(X)\) una subálgebra de funciones 
+              que separa los puntos de \(X\).
+          </p>
+          <p>
+            Entonces o bien \(\overline{A}=C(X)\)
+            ó existe un \(x_0\in X\) tal que 
+            \(\overline{A}=\{f\in C(X): f(x_0)=0 \}\).
+          </p>
+          </div>
+
+
+
+          <div class="nota-box">
+            <h2 class="number-title"> Nota </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico. Por 
+              \(C_{\mathbb{C}}(X)\) denotamos al conjunto de funciones 
+              continuas de \(X\) con valores en \(\mathbb{C}\).
+            </p>
+            <p>
+              Decimos que un subconjunto \(S\subseteq C_{\mathbb{C}}(X)\)
+              es cerrado bajo conjugación si para toda  \(f\in S\)
+              también se cumple que \(\overline{f}\in S\), donde \(\overline{f}\)
+              está dada por conjugación compleja de \(f\):
+              \(\overline{f}(x)=\overline{f(x)}\).
+            </p>
+
+          </div>
+
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <h3> Caso complejo </h3>
+            <p>
+                Sea \((X,d)\) un espacio métrico compcto y sea 
+                \(A \subseteq C_{\mathbb{C}}(X)\) una subálgebra de funciones 
+                que satisface:
+                <ol>
+                  <li>
+                    separa los  puntos de \(A\),
+                  </li>
+                  <li>
+                    no se anula en \(X\),
+                  </li>
+                  <li>
+                    es cerrada bajo conjugación.
+                  </li>
+                </ol>
+            </p>
+            <p>
+              Entonces \(A\) es densa en \(C_{\mathbb{C}}(X)\) (con respecto 
+              la norma \(\|\cdot\|_\infty\)).
+            </p>
+
+          </div>
+
+
+
+          <div class="coro-box">
+            <h2 class="number-title"> Corolario </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico compacto. Entonces 
+              \((C_{\mathbb{C}}(X), \|\cdot\|_\infty)\) es separable.
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((X,d)\) un espacio métrico compcto y sea 
+              \(A \subseteq C_{\mathbb{C}}(X)\) una subálgebra de funciones 
+              que satisface:
+              <ol>
+                <li>
+                  \(A\) es cerrada,
+                </li>
+                <li>
+                  separa los  puntos de \(A\),
+                </li>
+                <li>
+                  es cerrada bajo conjugación.
+                </li>
+              </ol>
+          </p>
+          <p>
+            Entonces tenemos dos casos:
+            <ol>
+              <li>
+                \(A=C_{\mathbb{C}}(X)\) ó 
+              </li>
+              <li>
+                existe un \(x_0\in X\) tal que 
+                \(A=\{f\in C_{\mathbb{C}}(X): f(x_0)=0 \}\).
+              </li>
+            </ol>
+          </p>
+          </div>
+
 
 
     </div>
