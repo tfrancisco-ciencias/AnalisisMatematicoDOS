@@ -81,6 +81,8 @@
 
         
 
+      
+
         <div class="teorema-box">
             <h2 class="number-title"> Teorema  </h2>
             
@@ -96,8 +98,81 @@
             </p>
           </div>
 
-    </div>
 
+
+         <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+            Si \(\alpha:[a,b]\to \mathbb{R}\) es monótona 
+            creciente entonces \(C[a,b]\subseteq \mathcal{R}_\alpha[a,b]\).
+          </p>
+
+         </div> 
+
+         <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+            Sea \(f:[a,b]\to \mathbb{R}\) una función tal que 
+            su derivada existe y \(f'\) es Riemann integrable en 
+            \([a,b]\). Entonces \(f\in BV[a,b]\) y 
+            \[
+            V_a^b(f)=\int_a^b|f'(t)|dt
+            \]
+          </p>
+
+
+         </div>
+
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema  </h2>
+        <p>
+          Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente, \(f,g\in \mathcal{R}_\alpha[a,b]\)
+          y \(c\in \mathbb{R}\). Entonces 
+        </p>
+        <ol>
+          <li>
+            \(cf+g \in \mathcal{R}_\alpha[a,b]\) y 
+            \[
+            \int_a^b (cf+g)d\alpha = c\int_a^b f d\alpha + \int_a^b g d\alpha 
+            \]
+          </li>
+          <li>
+            Si \(f\leq g\) en \([a,b]\) entonces \(\int_a^b f d\alpha \leq \int_a^b g d\alpha\).
+          </li>
+          <li>
+            \(|f|\in \mathcal{R}_\alpha[a,b]\) y 
+            \[
+            \left| \int_a^b fd\alpha \right|\leq \int_a^b |f|d\alpha \leq \|f\|_\infty[\alpha(b)-\alpha(a)]
+            \]
+          </li>
+          <li>
+            \(fg\in \mathcal{R}_\alpha[a,b]\) y 
+            \[
+            \left| \int_a^b fgd\alpha \right|\leq \left( \int_a^b f^2d\alpha\right)^{1/2}\left( \int_a^b g^2d\alpha\right)^{1/2}
+            \]
+          </li>
+        </ol>
+      </div>
+        
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente y \((f_n)_{n=1}^\infty\subset \mathcal{R}_\alpha[a,b]\) una sucesión 
+          de funciones que converge uniformemente en \([a,b]\) a una función \(f\). Entonces \(f\in \mathcal{R}_\alpha[a,b]\) y 
+          \[
+          \lim_{n\to \infty} \int_a^b f_nd\alpha= \int_a^b f_nd\alpha.
+          \]
+
+        </p>
+
+      </div>
+
+
+      
+    </div>
   </body>
 
   </html>
