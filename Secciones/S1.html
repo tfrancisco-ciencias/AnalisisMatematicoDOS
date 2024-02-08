@@ -1195,24 +1195,74 @@
           <h2 class="number-title"> Ejercicio </h2>
           <h3 > Series de potencias </h3>
           <p>
-            Si la serie de potencias \(\sum_{n=1}^\infty a_nx^n\)
-            converge absolutamente para un punto \(x_0 \ne 0\), entonces
+            <p>
+              Si \((a_n)_{n=1^\infty \subset \mathbb{R}}\) y \(x_0\in \mathbb{R}\), una serie de la 
+              forma 
+              \[
+              \sum_{n=0}^\infty a_n(x-x_0)^n
+              \]
+              se llama una serie de potencias alrededor de \(x_0\), con coeficientes \((a_n)_{n=1}^\infty\). Por ejemplo 
+              las series de Taylor de una función clase \(C^\infty\).
+            </p>
+            <p>
+              El radio de convergencia de la serie de define como 
+              \[
+              R=\frac{1}{\limsup_{n\to \infty}\sqrt[n]{|a_n|}}
+              \]
+
+              Notas: 
+              <ul>
+                <li>
+                  dada una sucesión \((b_n)_{n=1}^\infty \subset \mathbb{R}\) su límite superior se define como 
+                  \[
+                  \limsup_{n\to \infty}b_n = \inf_{n\geq 1}\{ \sup_{k\geq n}\{b_k \} \}.
+                  \]
+                </li>
+                <li>
+                  si la sucesión no está acotada puede suceder que \(\limsup_{n\to \infty}b_n=+\infty\).
+                </li>
+                <li>
+                  Si \(\limsup_{n\to \infty}\sqrt[n]{|a_n|}=0\) entonces \(R=+\infty\).
+                </li>
+              </ul>
+              
+            </p>
+            <h3>Ejemplo</h3>
+            <p>
+              Para la serie geométrica \(\sum_{n=0}^\infty x^n\), \(a_n=1\) para toda \(n\) por lo que su radio de 
+              convergencia es \(R=1\). Nótese que la serie converge en el intervalo \((-1,1)\).
+            </p>
+            <h3>
+              Teorema 
+            </h3>
+            <p>
+              Considera la serie de potencias 
+              \[
+              \sum_{n=0}^\infty a_n(x-x_0)^n
+              \]
+              con radio de convergencia \(R\).
+            </p>
             <ol>
+
             <li>
-              \(\sum_{n=1}^\infty a_nx^n\) converge
+              Si \(R=+\infty\), \(\sum_{n=1}^\infty a_n(x-x_0)^n\) converge absolutamente y 
               uniformemente en todo intervalo de la forma
-              \([-R,R]\), con \(R\) cualquier número positivo con
-              \(|R|<|x_0|\).
+              \([a,b]\), 
             </li>
             <li>
-              En el intervalo \((-|x_0|,|x_0|)\) se puede
+              Si \(R< +\infty\), \(\sum_{n=1}^\infty a_n(x-x_0)^n\) converge absolutamente y 
+              uniformemente en todo intervalo de la forma
+              \([a,b]\) contenido en \((x_0-R,x_0+R)\).
+            </li>
+            <li>
+              En el intervalo \((x_0-R,x_0+R)\) se puede
               derivar la serie término a término:
               \[
               \left(\sum_{n=1}^\infty a_nx^n \right)'=\sum_{n=1}^\infty na_nx^{n-1}
               \]
             </li>
             <li>
-              Para cualquier intervalo cerrado \([a,b]\subset (-|x_0|,|x_0|)\)
+              Para cualquier intervalo cerrado \([a,b]\subset (x_0-R,x_0+R)\)
               la serie se puede integrar término a término:
               \[
               \int_a^b \left( \sum_{n=1}^\infty a_nx^n \right)dx=
@@ -1221,6 +1271,38 @@
             </li>
            </ol>
           </p>
+          <button class="respButton hvr-grow"> Demostración incisos 1, 2</button>
+              <div class="resp-box">
+          <p>
+            Para unificar los casos \(R=+\infty, R< +\infty\), en caso de que \(R=+\infty\), entendemos 
+            \(x_0+R=+\infty, x_0-R=-\infty\). 
+          </p>
+          <p>
+            Dado \([a,b]\subset (x_0-R,x_0+R)\), fijamos \(r\in \mathbb{R}\) con \(0< r < R\) con la propiedad de que 
+            \([a,b]\subseteq (x_0-r,x_0+r)\).
+          </p>
+          <p>
+          Ahora tomamos  \(r_0\) tal que \(r< r_0 < R \). Entonces 
+          \[
+          \limsup_{n\to \infty} \sqrt[n]{|a_n|}=\frac{1}{R} < \frac{1}{r_0}.
+          \]
+          Por la propiedad fundamental del ínfimo existe un \(n\) tal que 
+          \[
+          \frac{1}{R} \leq \sup_{k\geq n} \{ \sqrt[k]{|a_k|}\} < \frac{1}{r_0}
+          \]
+          de lo que se sigue que \(|a_k|\leq \frac{1}{r_0^k}\), para todo \(k\geq n\). Ahora si nos fijamos en los términos 
+          de la serie de potencias tenemos, para \(k\geq n\) y \(x\in [a,b]\):
+          \begin{eqnarray*} 
+              |a_k(x-x_0)^k|=|a_k||x-x_0|^k \leq \frac{1}{r_0^k} |x-x_0|^k \leq \frac{r^k}{r_0^k}
+          \end{eqnarray*}
+          Nota: ya que \(x\in [a,b]\subset (x_0-r,x_0+r)\) se sigue que \(|x-x_0|\leq r\).
+          </p>
+          <p>
+            Finalmente si tomamos \(M_k=(\frac{r}{r_0})^k\), usamos que \(\frac{r}{r_0}< 1\) y la serie geométrica, podemos aplicar el criterio \(M\) de Weierestrass 
+            a las funciones \(f_k(x)=a_k(x-x_0)^k\), para obtener  que la serie \(\sum_{k=0}^\infty a_k(x-x_0)^k\) converge 
+            uniformemente en \([a,b]\).
+          </p>
+        </div>
         </div>
 
 
