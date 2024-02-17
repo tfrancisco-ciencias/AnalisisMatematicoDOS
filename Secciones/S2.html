@@ -390,8 +390,13 @@
         por la función \(\beta:[a,b]\to [0,1]\) dada por \(\beta(x)=\frac{x-a}{b-a}\)
         prueba que la definición de los polinomios de Bernstein en \([a,b]\) está dada por 
         \[
-        B_n(f)(x)=\frac{1}{(b-a)^n}\sum_{k=0}^n f\left( \frac{k(b-a)}{b-a}+a\right)(x-a)^k(b-x)^{n-k}
+        B_n(f)(x)=\frac{1}{(b-a)^n}\sum_{k=0}^n f\left( \frac{k(b-a)}{n}+a\right)(x-a)^k(b-x)^{n-k}
         \]
+        Prueba que con esta definición de polinomios de Bernstein en \([a,b]\) se cumple que 
+        \((B_n(f))_{n=1}^\infty\) converge uniformemente a \(f\) en \([a,b]\).
+      </p>
+      <p>
+        Sugerencia: usa en caso \([0,1]\) y los cambios de variable \(\alpha(t)=t(b-a)+a, \beta(x)=\frac{x-a}{b-a}\).
       </p>
 
     </div>
