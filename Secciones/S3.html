@@ -279,6 +279,28 @@
 
           </div>
 
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio</h2>
+              <p>
+                Sea \((X,d)\) un espacio métrico compacto y \(A \subseteq C(X)\) una subálgebra cerrada 
+                con uno de \(C(X)\). Si \(f\in A\) prueba que: 
+                <ol>
+                  <li>
+                      Si \(f \geq 0\) entonces \(\sqrt{f}\in A\). Hint: usa el teorema de aproximación de Weierstrass. 
+                  </li>
+                  <li>
+                     \(|f|\in A\). Hint: \(|x|=\sqrt{x^2}\). 
+                  </li>
+                  <li>
+                    En general si \(\varphi: [a,b]\to \mathbb{R}\)  es continua y \(f(X)\subseteq [a,b]\), 
+                    entonces \(\varphi \circ f = \varphi(f) \in A\).
+                  </li>
+                </ol> 
+
+              </p>
+
+            </div>
+
 
           <div class="definicion-box">
             <h2 class="number-title"> Definición </h2>
@@ -326,14 +348,58 @@
                 (f\wedge g)(x)=\min\{f(x),g(x) \}.
                 \end{eqnarray*}
               </li>
-
+              <li>
+                Siguiendo con el ejemplo anterior por \(B(X)\) denotamos al conjunto de funciones acotadas 
+                de \(X\) en \(\mathbb{R}\). Entonces \(B(X)\) es una retícula, pues podemos escribir 
+                \begin{eqnarray*} 
+                \max\{f(x),g(x)\}=\frac{f(x)+g(x)+|f(x)- g(x)|}{2} \\
+                \min\{f(x),g(x)\}=\frac{f(x)+g(x)-|f(x)- g(x)|}{2} .
+                \end{eqnarray*}
+          
+              </li>
             </ul>
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \((A,\leq)\) un conjunto parcialmente ordenado.
+            </p>
+            <ol>
+              <li>
+                Sea \(\{L_i\}_{i\in I}\) es una familia arbitraria de retículas en \(A\)
+                con  \(\cap_{i\in I}L_i \ne \emptyset\). Prueba que \(\cap_{i\in I}L_i\)
+                es una retícula.
+              </li>
+              <li>
+                Prueba con un ejemplo que la unión de retículas puede no ser una retícula.
+              </li>
+              <li>
+                Si \(\{L_n\}_{n=1}^\infty\) es una familia de retículas en \(A\) con la 
+                propiedad de que \(L_n\subseteq L_{n+1}\) entonces prueba que 
+                \(\cup_{n=1}^\infty L_n\) es una retícula..
+              </li>
+            </ol>
+
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              En la retícula de funciones acotadas en \([-1,1]\),
+              encuentra la retícula generada por la función idénticamente cero y la 
+              función identidad. Es decir, la retícula más chica (con respecto a la 
+              contención) que contiene a la función cero y a la identidad.
+            </p>
+
           </div>
 
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \((X,d)\) un espacio métrico y consideramos 
+              Sea \(X\ne \emptyset\) un conjunto  y consideramos 
               \((B(X), \|\cdot\|_\infty)\) el espacio vectorial 
               normado de funciones acotadas de \(X\) en 
               \(\mathbb{R}\).
@@ -405,8 +471,19 @@
               tal que \(f(x)=a\) y \(f(y)=b\).
             </p>
             <p>
-              Prueba que si \(\mathcal{F}\) no se anula en \(X\)
-              y separa los puntos de \(X\) entonces 
+              Prueba que si \(\mathcal{F}\) es : 
+              <ol>
+                <li>
+                  una álgebra de funciones,
+                </li>
+                <li>
+                  que no se anula en \(X\),
+                </li>
+                <li>
+                  y separa los puntos de \(X\),
+                </li>
+              </ol>
+              entonces 
               \(\mathcal{F}\) distingue los puntos de \(X\).
             </p>
            </div>
@@ -424,14 +501,14 @@
 
           <div class="teorema-box">
             <h2 class="number-title"> Teorema </h2>
-            <h3> Caso real </h3>
+            <h3> Stone-Weierstrass Caso real </h3>
             <p>
                 Sea \((X,d)\) un espacio métrico compcto y sea 
                 \(A \subseteq C(X)\) una subálgebra de funciones 
                 que satisface:
                 <ol>
                   <li>
-                    separa los  puntos de \(A\),
+                    separa los  puntos de \(X\),
                   </li>
                   <li>
                     no se anula en \(X\).
@@ -529,7 +606,7 @@
 
           <div class="teorema-box">
             <h2 class="number-title"> Teorema </h2>
-            <h3> Caso complejo </h3>
+            <h3> Stone-Weierstrass Caso complejo </h3>
             <p>
                 Sea \((X,d)\) un espacio métrico compcto y sea 
                 \(A \subseteq C_{\mathbb{C}}(X)\) una subálgebra de funciones 
@@ -597,7 +674,77 @@
           </div>
 
 
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sea \(L\subset C[a,b]\) el conjunto de funciones lineales a trozos en \([a,b]\). Prueba que 
+              \(L\) es una retícula que distingue los puntos de \([a,b]\). Por lo tanto es densa en 
+              \((C[a,b], \|\cdot\|_\infty)\).
+            </p>
 
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sea \(\emptyset \ne K\subseteq \mathbb{R}\) un subconjunto compacto. Define 
+              \(X=K^n\) (el producto cartesiano de \(K\) consigo mismo \(n\)-veces). Por \(p_i: X\to \mathbb{R}\) denotamos la proyección en la 
+              \(i\)-ésima coordenada. Prueba que el álgebra generada por las funciones 
+              \(\{p_i \}_{i=1}^n\) es densa en \(C(X)\).
+            </p>
+
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Denotamos \(\mathbb{T}=\{z\in \mathbb{C}: |z|=1 \}\).
+            </p>
+            <p>
+              Prueba que los polinomios con coeficientes complejos, en las variables \(z\) y \(\overline{z}\)
+              son densos en \(( C_\mathbb{C}(\mathbb{T}),\|\cdot\|_\infty) \).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para este ejercicio denotamos \(f(z)=\overline{z}\). Este ejercicio 
+              prueba que \(f\) no se puede aproximar uniformemente 
+              en \(\mathbb{T}\) mediante polinomios \(p(z)=\sum_{k=0}^n a_kz^k\).
+            </p>
+            <ol>
+              <li>
+                Prueba que para todo polinomio \(p(z)=\sum_{k=0}^n a_kz^k\)
+                \[
+                \int_0^{2\pi} f(e^{it})p(e^{it})dt=0
+                \]
+              </li>
+              <li>
+                Prueba 
+                \[
+                \int_0^{2\pi} f(e^{it})\overline{f(e^{it})}dt=2\pi.
+                \]
+              </li>
+              <li>
+                Prueba 
+              
+                \begin{eqnarray*} 
+                   \left|  \int_0^{2\pi} f(e^{it})\overline{f(e^{it})}dt \right|  
+                  & \leq &  \left| \int_0^{2\pi} (f(e^{it})-p(e^{it}))\overline{f(e^{it})}  \right| \\
+                  & \leq &  2\pi \|f-p\|_\infty
+                \end{eqnarray*}
+
+              </li>
+              <li>
+                Concluye que para todo polinomio \(p\), \(1\leq \|f-p\|_\infty\).
+              </li>
+            </ol>
+
+          </div>
     </div>
   </body>
 
