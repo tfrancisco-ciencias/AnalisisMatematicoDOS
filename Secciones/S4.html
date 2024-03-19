@@ -81,6 +81,190 @@
       
 
 
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Sea \(f:[a,b] \to \mathbb{R}\) una función. 
+          Dada \(P=\{a=t_0< \cdots < t_n =b\}\) una partición
+          arbitraria de \([a,b]\), 
+          definimos la variación de \(f\) con respecto a la 
+          partición como 
+          \[
+          V(f,P)=\sum_{i=1}^n |f(t_i)-f(t_{i-1})|
+          \]
+          La función \(f\) se llama de variación acotada 
+          si existe una constante \(M>0\) tal que 
+          \[
+          V(f,P) \leq M 
+          \]
+          para toda partición \(P\) de \([a,b]\).
+        </p>
+        <p>
+          Si \(f\) es de variación acotada definimos su 
+          variación total (o simplemente variación) como 
+          \[
+          V_a^b(f)=\sup_{P}\{V(f,P) \}
+          \]
+          donde el supremo se toma sobre todas las 
+          particiones del intervalo \([a,b]\).
+        </p>
+
+        <h3> Ejemplos </h3>
+        <ol>
+          <li>
+            Toda función monótona, \(f:[a,b]\to \mathbb{R}\), 
+            es de variación acotada 
+            con \(V_a^b(f)=|f(b)-f(a)|\). 
+          </li>
+          <li>
+            Si \(f:[a,b]\to \mathbb{R}\) es Lipschitz con constante 
+            \(K\) (es decir \(|f(x)-f(y)|\leq K|x-y|\), para todos 
+            \(x,y\in [a,b]\)) entonces \(f\) es de variación 
+            acotada con \(V_a^b(f)\leq K(b-a)\).
+          </li>
+        </ol>
+
+        <p>
+          Denotamos por \(BV[a,b]\) al conjunto de todas 
+          las funciones de variación acotada en \([a,b]\).
+        </p>
+
+      </div>
+
+      <div class="lema-box">
+        <h2 class="number-title"> Lema  </h2>
+        <p>
+          Sea \(f\in BV[a,b]\)  y sea \(c\in (a,b)\). Entonces 
+          las restricciones de \(f\) a \([a,c]\) y \([c,d]\)
+          son de variación acotada y 
+          \[
+          V_a^b(f)=V_a^c(f)+V_c^b(f)
+          \]
+        </p>
+      </div>
+
+
+
+      <div class="coro-box">
+        <h2 class="number-title"> Corolario </h2>
+        <ol>
+          <li>
+            Si \(f:[a,b]\to \mathbb{R}\) es monótona a trozos 
+            entonces \(f\) es de variación acotada. 
+          </li>
+          <li>
+            Si \(f\) es un polinomio entonces es de 
+            variación acotada en todo intervalo \([a,b]\).
+          </li>
+          <li>
+            Si \(f:[a,b]\to \mathbb{R}\) es una función escalonada 
+            entonces \(f\) es de variación acotada.
+          </li>
+        </ol>
+      </div>
+
+
+      <div class="lema-box">
+        <h2 class="number-title"> Lema  </h2>
+        <p>
+          Si \(f:[a,b]\to \mathbb{R}\) es de variación acotada 
+          entonces \(f\) es acotada y \(\|f\|_{[a,b]}\leq |f(a)|+V_a^b(f)\).
+        </p>
+
+      </div>
+
+
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Define la función \(f(x)=x\sin(1/x)\), para 
+          \(0< x < 1\) y \(f(0)=0\). Entonces 
+          \(f\) es continua, por lo tanto acotada en \([0,1]\), pero 
+          \(f\) NO es de variación acotada.
+        </p>
+
+      </div>
+
+
+
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <h3> Propiedades </h3>
+        <p>
+          Sean \(f,g\in BV[a,b]\) y \(\alpha \in \mathbb{R}\).
+        </p>
+        <ol>
+          <li>
+            \(V_a^b(f)=0\) si y sólo si \(f\) es constante.
+          </li>
+          <li>
+            \(V_a^b(f+g)\leq V_a^b(f)+V_a^b(f)\).
+          </li>
+          <li>
+            \(V_a^b(\alpha f)=|\alpha|V_a^b(f)\).
+          </li>
+          <li>
+            \(V_a^b(fg)\leq \|f\|_{[a,b]}V_a^b(g)+\|g\|_{[a,b]}V_a^b(f)\).
+          </li>
+          <li>
+            \(V_a^b(|f|)\leq V_a^b(f)\).
+          </li>
+        </ol>
+
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Si \(f:[a,b]\to \mathbb{R}\) tiene derivada acotada en 
+          \([a,b]\) entonces \(V_a^b(f)\leq \|f'\|_{a,b]}(b-a)\).
+        </p>
+
+      </div>
+
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Si \(f:[a,b]\to \mathbb{R}\) es una función 
+          poligonal o un polinomio prueba que 
+          \(V_a^b(f)=\int_a^b|f'(t)|dt\).
+        </p>
+        <p>
+          Sugerencia: en cualquiera de los dos casos, 
+          existen subintervalos donde \(f\) es monótona.
+        </p>
+
+      </div>
+
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\)
+          una sucesión de funciones que converge puntualmente a 
+          la función \(f\). 
+          <ol>
+            <li>
+              Prueba que para toda \(P\), partición de \([a,b]\),
+              \(\lim_{n\to \infty} V(f_n,P)=V(f,P)\).
+            </li>
+            <li>
+              En particular si existe \(K>0\) tal que 
+              \(V_a^b(f_n)\leq K\) para toda \(n\) entonces 
+              \(V_a^b(f)\leq K\).
+            </li>
+          </ol>
+        </p>
+
+
+      </div>
+
+
         <div class="teorema-box">
             <h2 class="number-title" id="Teo:CompletezVarAcotada"> Teorema </h2>
             <p>
