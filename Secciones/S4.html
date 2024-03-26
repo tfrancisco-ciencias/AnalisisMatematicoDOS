@@ -431,11 +431,51 @@
           \((f_n)_{n=1}^\infty\) converge puntualmente a \(f\) en \([a,b]\).
         </p>
 
-
-
       </div>
 
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Una función \(g:\mathbb{R}\to \mathbb{R}\) se llama de variación 
+          acotada en \(\mathbb{R}\) si 
+          <ol>
+            <li>
+              para todos \(a< b\), \(g\in BV[a,b]\) y 
+            </li>
+            <li>
+              existe una \(M>0 \) tal que 
+              \(V_a^b(g) \leq M\) para todos \(a < b \).
+            </li>
+          </ol>
 
+        </p>
+        <p>
+          Si éste es el caso denotamos 
+          \[
+          V_{-\infty}^{\infty}(g)=\sup_{a< b}\{V_a^b(g)  \}
+          \]
+        </p>
+        <ol type="i">
+          <li>
+            Prueba que 
+            \[
+            V_{-\infty}^{\infty}(g)=\lim_{a \to +\infty} V_{-a}^a(g)
+            \]
+          </li>
+          <li>
+            Define \(V_x^\infty(g)=\lim_{b\to +\infty} V_x^b(g)\). Prueba que 
+            \[
+            \lim_{x\to \infty}V_{x}^\infty(g)=0.
+            \]
+          </li>
+          <li>
+            \(g\) está acotada, es más para cada \(a\in \mathbb{R}\): 
+            \(|g(x)|\leq |g(a)|+V_{-\infty}^{\infty}(g)\) para toda \(x\).
+          </li>
+        </ol>
+        
+
+      </div>
 
 
 
