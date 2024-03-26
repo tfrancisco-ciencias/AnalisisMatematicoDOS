@@ -222,7 +222,7 @@
             \(fg\in BV[a,b]\) y \(V_a^b(fg)\leq \|f\|_{[a,b]}V_a^b(g)+\|g\|_{[a,b]}V_a^b(f)\).
           </li>
           <li>
-            \(|f||in BV[a,b]\)  y \(V_a^b(|f|)\leq V_a^b(f)\).
+            \(|f|\in BV[a,b]\)  y \(V_a^b(|f|)\leq V_a^b(f)\).
           </li>
         </ol>
 
@@ -278,6 +278,22 @@
       </div>
 
 
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \(\alpha:[a,b]\to [c,d]\) la única función 
+          afín (es decir, su gráfica es una línea recta) tal 
+          que \(\alpha(a)=c\) y \(\alpha(b)=d\). 
+        </p>
+        <p>
+          Supón que \(h\in BV[c,d]\). Prueba que 
+          \(h \circ \varphi \in BV[a,b]\) y \(V_c^d(h)=V_a^b(h \circ \alpha)\).
+        </p>
+
+
+      </div>
+
+
         <div class="teorema-box">
             <h2 class="number-title" id="Teo:CompletezVarAcotada"> Teorema </h2>
             <p>
@@ -289,7 +305,23 @@
             
           </div>
 
-          
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sean \(f,g:[a,b]\to \mathbb{R}\) dos funciones de variación 
+              acorada y supón que además 
+              \[
+              \inf_{t \in [a,b]}\{|g(t)| \} >0 
+              \]
+              Prueba que \(f/g\) es de variación acotada y que 
+
+              \[
+              V_a^b(f/g)\leq \frac{1}{r^2}( \|f\|_{[a,b]}V_a^b(g)+ \|g\|_{[a,b]}V_a^b(f)  )
+              \]
+              donde \(r=\inf_{t \in [a,b]}\{|g(t)| \}\).
+            </p>
+
+          </div>
 
 
        <div class="teorema-box">
@@ -309,8 +341,9 @@
        </div>   
 
 
+
        <div class="teorema-box">
-        <h2 class="number-title"> Teorema </h2>
+        <h2 class="number-title"> Corolario </h2>
         <h3> Teorema de descomposición de Jordan</h3>
         <p>
           Una función \(f:[a,b]\to \mathbb{R}\) es de 
@@ -319,6 +352,69 @@
         </div>
 
       </div>
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \(g:[a,b]\to \mathbb{R}\) una función 
+          de variación acotada en \([a,b]\) y define 
+          \[
+          v(x)=V_a^x(g)
+          \]
+          Por el toerema anterior \(v\) es de variación 
+          acotada. Prueba que 
+          \[
+          V_a^b(v)=V_a^b(g).
+          \]
+        </p>
+
+       </div>
+
+       <div class="ejercicio-box"> 
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(f:[a,b]\to \mathbb{R} \) una función tal que 
+            \(f'\) existe  y es Riemann integrable 
+            en \([a,b]\)
+          </p>
+          <p>
+            Prueba que \(f\in BV[a,b]\) y que 
+            \[
+            V_a^b(f)=\int_a^b |f'(t)|dt
+            \]
+          </p>
+
+       </div>
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \(h\in BV[a,b]\) y \(c\in (a,b)\) fija y arbitraria.
+        </p>
+        <ol>
+          <li>
+            Supón que \(h\) es continua por la derecha en \(c\), 
+            es decir \(\lim_{t \to c^+} h(t)=h(c)\). Prueba que 
+            para todo \(\varepsilon >0 \) existe 
+            \(\delta > 0\) y \(P=\{c=t_0 < t_1 < \cdots < t_n=b\}\)
+            una partición de \([c,b]\) tal que \(t_1-c< \delta \) y tal que 
+            \[
+            V_c^b(h)-\frac{\varepsilon}{2} \leq \frac{\varepsilon}{2}+V(h,P) \leq 
+            \frac{\varepsilon}{2}+ V_{t_1}^b(h)
+            \]
+            Deduce que \(V_c^b(g)-V_{t_1}^b(g) \leq  \varepsilon\)
+            y que \(\lim_{t\to c^+} V_c^b(g)=V_c^b(g)\).
+          </li>
+          <li>
+            Prueba que \(h(t)\) es continua en 
+            \(t=c\) si y sólo si \(V_t^b(h)\) es continua en 
+            \(t=c\). 
+          </li>
+        </ol>
+
+       </div>
+
+
 
 
       <div class="teorema-box">
