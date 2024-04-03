@@ -353,6 +353,19 @@
 
       </div>
 
+
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio</h2>
+        <p>
+          \(h \in C[a,b]\cap BV[a,b]\) si y sólo si \(f\) puede escribirse como la 
+          diferencia de dos funciones continuas y monótonas crecientes.
+        </p>
+
+       </div>
+
+
+
        <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
         <p>
@@ -414,21 +427,60 @@
 
        </div>
 
-       <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
         <p>
-          Sea \(f\) una función monótona. Prueba que 
-          su conjuto de discontinuidades es numerable.
+          Sea \(f:D\to \mathbb{R}\), \(D\subseteq [a,b]\), una función monótona. Entonces 
+          el conjunto de puntos de discontinuidad de \(f\) es a lo más numerable y toda 
+          discontinuidad es una discontinuidad de salto.
+        </p>
+
+       </div>
+
+       <div class="coro-box">
+        <h2 class="number-title" > Corolario</h2>
+        <p>
+          Toda función en \(BV[a,b]\) tiene a lo más una cantidad numerable de puntos de discontinuidad 
+          y todas sus discontinuidades son de salto.
+        </p>
+
+       </div>
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Principio de selección de Kelly</h3>
+        <p>
+          Sea \(X\ne \emptyset\) un subconjunto y \(D\subseteq X\) numerable. Sea 
+          \((f_n:X\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones uniformemente acotadas en \(X\), es decir,
+          existe \(M>0\) tal que, para toda \(n\in \mathbb{N}\) y toda \(x\in X\), \(|f_n(x)|\leq M\).
+
+        </p>
+        <p>
+          Entonces existe una subsucesión \((f_{n_k})_{k=1}^\infty\) tal que, para toda 
+          \(d\in D\), el límite \(\lim_{k\to \infty}f_{n_k}(d)\) existe.
         </p>
 
        </div>
 
 
-       <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
+       <div class="lema-box">
+        <h2 class="number-title"> Lema </h2>
         <p>
-          \(h \in C[a,b]\cap BV[a,b]\) si y sólo si \(f\) puede escribirse como la 
-          diferencia de dos funciones continuas y monótonas crecientes.
+          Sea \(X\subseteq [a,b]\) tal que \(a,b\in X\). Si \(f:X\to \mathbb{R}\) es monótona creciente 
+          entonces \(f\) se extiende a una función monótona creciente an todo \([a,b]\).
+        </p>
+
+       </div>
+
+       <div class="lema-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+          Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\) una sucesión uniformemente acotada.
+        </p>
+        <p>
+          Si cada \(f_n\) es monótona creciente entonces existe una subsucesión \((f_{n_k})_{k=1}^\infty\)
+          y una función monótona creciente \(f:[a,b]\to \mathbb{R}\), tal que 
+          \(\lim_{k\to \infty}f_{n_k}(x)=f(x)\), para todo \(x\in [a,b]\).
         </p>
 
        </div>
