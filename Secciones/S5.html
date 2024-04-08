@@ -81,7 +81,147 @@
 
         
 
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Si \(P=\{a=x_0< \cdots < x_n=b \}\) es una partición del intervalo \([a,b]\)
+          y \(\alpha:[a,b]\to \mathbb{R}\) es una función denotamos \(\Delta_i\alpha=\alpha(x_i)-\alpha(x_{i-1})\),
+          para \(i=1,\dots. n\).
+        </p>
+        <p>
+          Decimos que una partición \(Q\) de \([a,b]\) refina a \(P\) si \(P\subseteq Q\). La norma de una 
+          partición \(P=\{a=x_0< \cdots < x_n=b\) se define como 
+            \(\|P\|=\max_{i=1,\dots, n}\{x_i-x_{i-1}\}\). Notar que si \(Q\) refina a \(P\) entonces 
+            \(\|Q\| \leq \|P\|\).
+        </p>
+
+        <p>
+          Si \(P\) es una partición de \([a,b]\) y \(t_i\) son puntos en el intervalo \([x_{i-1},x_i]\), 
+          una suma de la forma 
+          \[
+          S(f,P,\alpha)=\sum_{i=1}^n f(t_i)\Delta_i \alpha
+          \]
+          se llama una suma de Riemann-Stieltjes de \(f\) con respecto a \(\alpha\).
+        </p>
+        <p>
+          Dadas funciones acotadas \(\alpha, f:[a,b]\to \mathbb{R}\), decimos que 
+          \(f\) es Riemann integrable con respecto de \(\alpha\), en  \([a,b]\), si existe un número \(I\in \mathbb{R}\)
+          que satisface: para toda \(\varepsilon >0 \) existe una partición \(P_\varepsilon\) de \([a,b]\) de tal forma 
+          que para toda partición \(P\) con  \(P_\varepsilon \subseteq P\) y para toda selección de puntos 
+          \(t_i\in [x_{i-1},x_i]\), se cumple
+          \[
+          |S(f,P,\alpha)-I| < \varepsilon.
+          \]
+          En tal caso denotamos \(f\in R_{\alpha}[a,b]\) o \(f\in R_\alpha\) si el intervalo es claro.
+        </p>
+        <p>
+          Si tal número existe se le denota \(\int_a^bf(x)d\alpha(x)\) o simplemente 
+          \(\int_a^b f d\alpha\). A la función \(f\) se le llama el integrando y a la \(\alpha\) el integrador.
+        </p>
+        <p>
+          En el caso de \(\alpha(x)=x\) se recupera la integral de Riemann.
+        </p>
+      </div>
       
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Linealidad (en el integrando)</h3>
+        <p>
+          Si \(f,g\in R_\alpha[a,b]\) y \(c\) es un escalar, entonces \(f+cg\in R_\alpha[a,b]\) y además 
+          \[
+          \int_a^b (f+cg)d\alpha= \int_a^b f d\alpha+ c\int_a^b g d\alpha
+          \]
+        </p>
+
+      </div>
+
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Linealidad (en el integrandor)</h3>
+        <p>
+          Si \(f\in R_\alpha[a,b]\) y \(g\in R_\alpha[a,b]\) entonces para todo 
+          escalar \(c\), \(f\in R_{\alpha+c\beta}[a,b]\) y 
+          \[
+          \int_a^b fd(\alpha+ c \beta)=\int_a^b fd\alpha + c \int_a^b f d\beta
+          \] 
+        </p>
+
+       </div> 
+
+
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \(c\in (a,b)\). Entonces  \(f\in R_\alpha[a,b]\) si y sólo si 
+          \(f\in R_\alpha[a,c]\) y \(f\in R_\alpha[c,b]\). Además  
+          \[
+          \int_a^b f d\alpha = \int_a^c fd\alpha+\int_c^d f d\alpha
+          \]
+        </p>
+       </div>
+
+
+       <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Si \(a < b\) se define \(\int_b^a f d\alpha = - \int_a^b f d\alpha\), siempre y cuando 
+          \(\int_a^b fd\alpha\) existe.
+        </p>
+
+       </div>
+
+
+
+       <div class="teorema-box"> 
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Integración por partes </h3>
+        <p>
+          Si \(f\in R_\alpha[a,b]\) entonces \(\alpha \in R_f[a,b]\) y además 
+          \[
+          \int_a^b f(x)d\alpha(x)+\int_a^b \alpha(x)df(x)=f(b)\alpha(b)-f(a)\alpha(a)
+          \]
+        </p>
+       </div>
+
+
+       
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \(f\in R_\alpha[a,b]\) y \(g:[c,d]\to \mathbb{R}\) estrictamente creciente 
+          (o decreciente) y continua. Supón que \(a=g(c)\) y \(b=g(d)\). Sean \(h\) y \(\beta\) 
+          definidas por 
+          \[
+          h(x)=f(g(x)), \, \beta(x)=\alpha(g(x)), \, x\in [c,d]
+          \] 
+          Entonces \(h\in R_\beta[c,d]\) y 
+          \[
+          \int_{g(c)}^{g(d)}f(t)d\alpha(t)=\int_a^bh(x)d\beta(x)
+          \]
+        </p>
+
+       </div>
+
+
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Supón que \(f\in R_\alpha[a,b]\) y que \(\alpha:[a,b]\to \mathbb{R}\)
+          es diferenciable con derivada continua en \([a,b]\). Entonces la integral 
+          usual de Riemann, \(\int_a^b f(x)\alpha'(x)dx\) existe y 
+          \[
+          \int_a^b f(x)d\alpha(x)=\int_a^b f(x)\alpha'(x)dx.
+          \]
+        </p>
+
+       </div>
+
+
 
         <div class="teorema-box">
             <h2 class="number-title"> Teorema  </h2>
@@ -171,6 +311,41 @@
       </div>
 
 
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Evalua:
+        </p>
+        <ol type="i">
+          <li>
+            \(\int_0^1f(x)d\lfloor nx \rfloor\), \(n=1,2,\dots, \) para 
+            \(f:[0,1]\to \mathbb{R}\) continua. Ahora calcula 
+            \[
+            \lim_{n\to \infty}\frac{1}{n}\int_0^1 f(x)dx \lfloor nx \rfloor
+            \]
+            donde \(\lfloor x \rfloor\) denota el mayor entero menor o igual a \(x\).
+          </li>
+          <li>
+            \(\lim_{n\to \infty} \int_0^b e^{-nx}de^{-x}\).
+          </li>
+        </ol>
+
+      </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \(\alpha:[a,b]\to \mathbb{R}\) no negativa y monótona creciente. 
+          Si \(h:[a,b]\to \mathbb{R}\) es continua, entonces existe \(c\in [c,b]\) tal que 
+          \[
+          \int_a^b \varphi(x)h(x)dx=\varphi(c)\int_a^bh(x)dx.
+          \]
+        </p>
+        <p>
+          ¿Se vale el mismo resultado si \(\varphi\) es monótona decreciente?
+        </p>
+
+      </div>
       
     </div>
   </body>
