@@ -142,7 +142,7 @@
         <h2 class="number-title"> Teorema </h2>
         <h3> Linealidad (en el integrador)</h3>
         <p>
-          Si \(f\in R_\alpha[a,b]\) y \(f\in R_\alpha[a,b]\) entonces para todo 
+          Si \(f\in R_\alpha[a,b]\) y \(f\in R_\beta[a,b]\) entonces para todo 
           escalar \(c\), \(f\in R_{\alpha+c\beta}[a,b]\) y 
           \[
           \int_a^b fd(\alpha+ c \beta)=\int_a^b fd\alpha + c \int_a^b f d\beta
@@ -156,10 +156,10 @@
        <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
         <p>
-          Sea \(c\in (a,b)\). Entonces  \(f\in R_\alpha[a,b]\) si y sólo si 
-          \(f\in R_\alpha[a,c]\) y \(f\in R_\alpha[c,b]\). Además  
+          Sea \(c\in (a,b)\). Si \(f\in R_\alpha[a,c]\) y \(f\in R_\alpha[c,b]\) entonces 
+          \(f\in R_\alpha[a,b]\) y 
           \[
-          \int_a^b f d\alpha = \int_a^c fd\alpha+\int_c^d f d\alpha
+          \int_a^b fd\alpha = \int_a^c f d\alpha + \int_c^b f d\alpha
           \]
         </p>
        </div>
@@ -193,15 +193,19 @@
        <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
         <p>
-          Sea \(f\in R_\alpha[a,b]\) y \(g:[c,d]\to \mathbb{R}\) estrictamente creciente 
-          (o decreciente) y continua. Supón que \(a=g(c)\) y \(b=g(d)\). Sean \(h\) y \(\beta\) 
+          Sea \(f\in R_\alpha[a,b]\) y \(u:[c,d]\to \mathbb{R}\) estrictamente creciente 
+          (o decreciente) y continua. Supón que \(a=u(c)\) y \(b=u(d)\). Sean \(h\) y \(\beta\) 
           definidas por 
           \[
-          h(x)=f(g(x)), \, \beta(x)=\alpha(g(x)), \, x\in [c,d]
+          h(x)=f(u(x)), \, \beta(x)=\alpha(u(x)), \, x\in [c,d]
           \] 
           Entonces \(h\in R_\beta[c,d]\) y 
           \[
-          \int_{g(c)}^{g(d)}f(t)d\alpha(t)=\int_a^bh(x)d\beta(x)
+          \int_{u(c)}^{u(d)}f(t)d\alpha(t)=\int_a^bh(x)d\beta(x),
+          \]
+          es decir 
+          \[
+          \int_{u(c)}^{u(d)}f(t)d\alpha(t)=\int_a^b f(u(x))d\alpha(u(x)).
           \]
         </p>
 
