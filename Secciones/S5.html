@@ -226,6 +226,82 @@
        </div>
 
 
+       <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Dados \(a< c< b\), define \(\alpha:[a,b]\to \mathbb{R}\) como sigue:
+          \(\alpha(a),\alpha(c), \alpha(b)\) son valores arbitrarios y para el resto 
+          \[
+          \alpha(x)=\left\{ \begin{array}{cc} 
+          \alpha(a)  & a\leq x < c \\
+          \alpha(b)  & c< x \leq b
+          \end{array}
+          \right.
+          \]
+          Sea \(f:[a,b]\to \mathbb{R}\) una función tal que:
+         <ol>
+          <li>
+            almenos una de las dos funciones 
+          \(\alpha\) ó \(f\) es continua por la derecha en \(c\),
+          </li>
+          <li>
+            almenos una de las dos funciones 
+          \(\alpha\) ó \(f\) es continua por la izquierda en \(c\).
+          </li>
+         </ol>  
+         Entonces \(f\in R_\alpha[a,b]\) y 
+         \[
+         \int_a^b f(x)d\alpha(x)=f(c)(\alpha(c^+)-\alpha(c^-)).
+         \]
+        </p>
+       </div>
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Calcula las siguientes integrales. Siempre puedes suponer que 
+          para las funciones dadas, 
+          \(f\in R_\alpha[a,b]\).
+        </p>
+        <ol>
+          <li>
+            \( \int_0^3 x^2 d\lfloor x \rfloor\).
+          </li>
+          <li>
+            \(\int_0^1 x(1-x)dx^3\)
+          </li>
+          <li>
+            \(\int_{-1}^2 (3x-2)d(\lfloor x\rfloor +2x^2)  \).
+          </li>
+          <li>
+            \(\int_{-\pi}^{\pi}\cos(x)d\sen(x)\).
+          </li>
+        </ol>
+
+       </div>
+       
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Sea \(f:[a,b]\to \mathbb{R}\) tal que \(f(a)=0=f(b)\). Supón que 
+          \(f'\) existe y es continua en \([a,b]\) y que \(\int_a^b f^2(x)dx=1\). Prueba:
+          <ol>
+            <li>
+              \(\int_a^b xf(x)f'(x)dx=-\frac{1}{2}\).
+            </li>
+            <p>
+
+            </p>
+            <li>
+              \(\frac{1}{4}\leq (\int_a^b (f'(x))^2dx)(\int_a^b  x^2f^2(x)dx) \). 
+            </li>
+          </ol>
+        </p>
+       </div>
+
+
+
 
         <div class="teorema-box">
             <h2 class="number-title"> Teorema  </h2>
