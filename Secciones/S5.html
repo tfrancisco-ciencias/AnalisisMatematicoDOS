@@ -257,6 +257,9 @@
         </p>
        </div>
 
+
+
+
        <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio </h2>
         <p>
@@ -304,6 +307,81 @@
         </p>
        </div>
 
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <p>
+          Recuerda que una función \(\alpha:[a,b]\to \mathbb{R}\) se llama escalonada 
+          si existe una partición \(P=\{a=x_0 < \cdots < x_n =b \}\) de tal forma que 
+          para todo \(i=1,\dots n\),
+          \(\alpha\) es constante en \((x_{i-1}, x_i)\). Nota: los valores de la función 
+          \(\alpha(x_i)\) son arbitrarios, es decir no tiene que ser continua por la derecha o 
+          izquierda necesariamente.
+        </p>
+        <p>
+          Sea \(\alpha:[a,b]\to \mathbb{R}\) una función escalonada y 
+          \(f:[a,b]\) una función de tal forma que \(f\) y \(\alpha\) no son 
+          ambas discontinuas, por la derecha o izquierda, en los puntos de
+          la partición que define a \(\alpha\). Entonces \(f\in R_\alpha[a,b]\) y 
+          \[
+          \int_a^b fd\alpha = \sum_{i=1}^nf(x_i)(\alpha(x_i^+)-\alpha(x_i^-)).
+          \]
+          donde \(\alpha(x_1^-)=\alpha(x_1)\) y \(\alpha(x_n^+)=\alpha(x_n)\).
+        </p>
+       </div>
+
+
+
+       <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+        <h3> Fórmula de la sumatoria de Euler</h3>
+        <p>
+          Si la función \(f(x)\) tiene una derivada continua en \((a,b)\) entonces 
+          \[
+          \sum_{a< n \leq b}f(n)=\int_a^b f(x)dx+\int_a^b f'(x)((x))dx+ f(a)((a))-f(b)((b))
+          \]
+          donde \(((x)):=x-\lfloor x \rfloor \).
+        </p>
+        <p>
+          Cuando \(a\) y \(b\) son enteros lo anterior se vuelve
+          \[
+          \sum_{n=a}^b f(n)=\int_a^bf(x)dx+ \int_a^b f'(x)(x-\lfloor x \rfloor)dx
+          \]
+        </p>
+        <p>
+          Sugerencia: usa integración por partes.
+        </p>
+       </div>
+
+
+       <div class="definicion-box">
+        <h2 class="number-title"> Definición</h2>
+        <p>
+          Dada una partición de \([a,b]\), \(P=\{x_0 < \cdots < x_n \}\) 
+          y una función acotada \(f:[a,b]\to \mathbb{R}\) definiemos 
+          \[
+          m_i(f)=\inf_{x\in [x_{i-1},x_i]}\{ f(x)\}, \, M_i(f)=\sup_{x\in [x_{i-1},x_i]}\{ f(x)\}.
+          \]
+            Dada una función acotada \(\alpha:[a,b]\to \mathbb{R}\), las sumas 
+            \[
+            \overline{S}(f,P,\alpha)=\sum_{i=1}^n M_i(f)\Delta_i\alpha,
+            \]
+            \[
+            \underline{S}(f,P,\alpha)=\sum_{i=1}^n m_i(f)\Delta_i\alpha
+            \]
+            se llaman sumas inferiores y superiores de Riemann con respecto a \(\alpha\).
+        </p>
+        <p>
+          Nota que \(m_i(f)\leq M_i(f)\). Entonces si \(\alpha:[a,b]\to \mathbb{R}\) es monótona 
+          creciente, entonces \(\Delta_i\alpha= \alpha(x_i)-\alpha(x_{i-1}) \geq 0\) para toda \(i\) y por 
+          lo tanto 
+          \[ m_i(f)\Delta_i\alpha \leq f(t_i)\Delta_i \alpha \leq M_i(f)\Delta_i\alpha \]
+          para toda elección de puntos \(t_i\in [x_{i-1},x_i]\) de lo que se sigue que 
+          \[
+          \underline{S}(f,P,\alpha) \leq S(f,P,\alpha)\leq \overline{S}(f,P,\alpha)
+          \]
+        </p>
+       </div>
 
 
 
