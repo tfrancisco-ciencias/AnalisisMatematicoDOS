@@ -385,7 +385,7 @@
 
 
        <div class="prop-box">
-        <h3 class="number-title"> Proposición </h3>
+        <h2 class="number-title"> Proposición </h2>
         <p>
           Sean \(f,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
           \(\alpha\) monótona creciete. 
@@ -424,31 +424,127 @@
         </p>
        </div>
 
-        <div class="teorema-box">
+
+       <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+          Sean \(f,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+          \(\alpha\) monótona creciente. Entonces:
+          \[
+          \underline{\int_a^b}fd\alpha  \leq 
+          \overline{\int_a^b}fd\alpha  \}
+          \]
+        </p>
+       </div>
+        
+       
+       <div class="teorema-box">
             <h2 class="number-title"> Teorema  </h2>
             
             <p>
-             Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente.
-             Una función acotada \(f:[a,b]\to \mathbb{R}\) está 
-             en \(\mathcal{R}_\alpha[a,b]\) si y sólo si 
-             para toda \(\varepsilon >0\), existe una partición 
-             \(P\) de \([a,b]\) tal que 
+             Sean \(f,\alpha:[a,b]\to \mathbb{R}\) funciones 
+             acotadas con \(\alpha\) monótona creciente. Las 
+             siguientes condiciones son equivalentes.
+            </p>
+            <ol>
+              <li>
+                \(f\in R_\alpha[a,b]\).
+              </li>
+              <li>
+              (Condición de Riemann) 
+              <p> 
+                  Para toda \(\varepsilon >0\), existe una partición 
+             \(P_\varepsilon\) de \([a,b]\) tal que 
              \[
-             U(f,P)-L(f,P) < \varepsilon 
+             \overline{S}(f,P,\alpha)-\underline{S}(f,P,\alpha) < \varepsilon 
              \]
+             para toda partición \(P\) de \([a,b]\) que refina a \(P_\varepsilon\).
+              </p>
+              </li>
+              <li>
+                \[
+                \underline{\int_a^b}fd\alpha =
+          \overline{\int_a^b}fd\alpha  
+                \]
+              </li>
+            </ol>
+          </div>
+
+
+
+
+         <div class="coro-box">
+          <h2 class="number-title"> Corolario </h2>
+          <p>
+            Sran  \(f,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+            \(f\) continua y \(\alpha\) monótona 
+            creciente. Entonces \(C[a,b]\subseteq \mathcal{R}_\alpha[a,b]\).
+          </p>
+
+         </div> 
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+              Sean \(f,g,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+              \(\alpha\) monótona creciente. Si \(f\leq g\)  y \(f,g \in R_\alpha[a,b]\)
+              entonces 
+              \[
+              \int_a^b f d\alpha \leq \int_a^b g d\alpha
+              \]
+              En particular si \(g\geq 0\) entonces \(o\leq \int_a^b g d\alpha\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Da un ejemplo de funciones acotadas \(f,\alpha:[a,b]\to \mathbb{R}\)
+              tal que \(f\in R_\alpha[a,b]\), con \(f\geq 0\) pero tal que 
+              \[
+              \int_a^b f d\alpha < 0.
+              \]
+              Sugerencia: propon \(\alpha\) como una función escalonada.
+            </p>
+
+          </div>
+
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+              Sean \(f,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+              \(\alpha\) monótona creciente. Si \(f\in R_\alpha[a,b]\) entonces 
+              \(|f|\in R_\alpha[a,b]\) y 
+              \[
+              \left| \int_a^b f d\alpha \right| \leq \int_a^b |f|d\alpha.
+              \]
+            </p>
+
+          </div>
+
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+              Sean \(f,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+              \(\alpha\) monótona creciente. Si \(f\in R_\alpha[a,b]\) entonces 
+              \(f^2\in R_\alpha[a,b]\).
             </p>
           </div>
 
 
 
-         <div class="teorema-box">
-          <h2 class="number-title"> Teorema </h2>
-          <p>
-            Si \(\alpha:[a,b]\to \mathbb{R}\) es monótona 
-            creciente entonces \(C[a,b]\subseteq \mathcal{R}_\alpha[a,b]\).
-          </p>
 
-         </div> 
+          <div class="coro-box">
+            <h2 class="number-title"> Corolario </h2>
+            <p>
+              Sean \(f,g,\alpha:[a,b]\to \mathbb{R}\) funciones acotadas con 
+              \(\alpha\) monótona creciente. Si \(f,g\in R_\alpha[a,b]\) entonces 
+              \(fg\in R_\alpha[a,b]\).
+            </p>
+          </div>
 
          <div class="teorema-box">
           <h2 class="number-title"> Teorema </h2>
@@ -465,38 +561,6 @@
          </div>
 
 
-
-      <div class="teorema-box">
-        <h2 class="number-title"> Teorema  </h2>
-        <p>
-          Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente, \(f,g\in \mathcal{R}_\alpha[a,b]\)
-          y \(c\in \mathbb{R}\). Entonces 
-        </p>
-        <ol>
-          <li>
-            \(cf+g \in \mathcal{R}_\alpha[a,b]\) y 
-            \[
-            \int_a^b (cf+g)d\alpha = c\int_a^b f d\alpha + \int_a^b g d\alpha 
-            \]
-          </li>
-          <li>
-            Si \(f\leq g\) en \([a,b]\) entonces \(\int_a^b f d\alpha \leq \int_a^b g d\alpha\).
-          </li>
-          <li>
-            \(|f|\in \mathcal{R}_\alpha[a,b]\) y 
-            \[
-            \left| \int_a^b fd\alpha \right|\leq \int_a^b |f|d\alpha \leq \|f\|_\infty[\alpha(b)-\alpha(a)]
-            \]
-          </li>
-          <li>
-            \(fg\in \mathcal{R}_\alpha[a,b]\) y 
-            \[
-            \left| \int_a^b fgd\alpha \right|\leq \left( \int_a^b f^2d\alpha\right)^{1/2}\left( \int_a^b g^2d\alpha\right)^{1/2}
-            \]
-          </li>
-        </ol>
-      </div>
-        
 
       <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
