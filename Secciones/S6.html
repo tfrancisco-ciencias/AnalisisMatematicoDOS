@@ -79,9 +79,188 @@
 
     <div class="flexbox">
 
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(\alpha:[a,b]\to \mathbb{R}\) de variación acotada y \(f:[a,b]\to \mathbb{R}\) una función continua. 
+        Entonces \(f\in R_\alpha[a,b]\).
+      </p>
+
+    </div>
+
+
+
       
+      <div class="lema-box">
+        <h2 class="number-title"> Lema  </h2>
+        <p>
+          Sea \(\alpha:[a,b]\to \mathbb{R}\) una función de variación acotada y definimos  
+          \(v:[a,b]\to \mathbb{R}\) como \(v(x)=V_a^x(\alpha)\) (la variación de \(\alpha\)).
+        </p>
+        <p>
+          Si \(f\in R_\alpha[a,b]\) entonces \(f\in R_v[a,b]\).
+        </p>
+      </div>
+
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(\alpha:[a,b]\to \mathbb{R}\) una función de variación acotada y \(f\in R_\alpha[a,b]\). Entonces 
+        para todo subintervalo \([c,d]\subseteq [a,b]\), \(f\in R_\alpha[c,d]\).
+      </p>
+
+    </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente y supón que \(f,g\in R_\alpha[a,b]\). Define
+        \(F,G:[a,b]\to \mathbb{R}\) por  
+        \begin{eqnarray*} 
+        F(x):=\int_a^x f(t)d\alpha(t) \\
+        G(x):=\int_a^x g(t)d\alpha(t)
+        \end{eqnarray*}
+
+        Entonces \(f\in R_G[a,b], g\in R_F[a,b]\) y 
+        \begin{eqnarray*} 
+        \int_a^b f(t)g(t)d\alpha(t)&=& \int_a^b f(t)dG(t) \\
+        &=&\int_a^b g(t)dF(t)
+        \end{eqnarray*}
+      </p>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3 > Primer Teorema del Valor Medio </h3>
+      <p>
+        Sea \(\alpha:[a,b]\to \mathbb{R}\) monótona creciente y \(f\in R_\alpha[a,b]\). 
+        Sean \(m=\inf_{x\in [a,b]}\{ f(x)\}\) y \(M=\sup_{x\in [a,b]}\{ f(x)\}\).
+      </p>
+      <p>
+        Entonces existe un \(c\in [m,M]\) tal que 
+        \[
+        \int_a^b f d\alpha = c(\alpha(b)-\alpha(a)).
+        \]
+        En particular si \(f\) es continua existe un \(x_0\in [a,b]\) tal que \(c=f(x_0)\).
+      </p>
+    </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Segundo Teorema del Valor Medio </h3>
+      <p>
+        Supón que \(f:[a,b]\to \mathbb{R}\) es monótona creciente y \(\alpha:[a,b]\to \mathbb{R}\) 
+        es continua. Entonces existe un punto \(x_0\in [a,b]\) tal que 
+        \[
+        \int_a^b f d\alpha = f(a)\int_a^{x_0}d\alpha + f(b)\int_{x_0}^b d\alpha.
+        \]
+      </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \((a_n)_{n=0}^\infty \subset \mathbb{R}\) y  define \(A:[0,\infty) \to \mathbb{R} \) por 
+        \[
+        A(x)=\sum_{n=0}^{\lfloor x \rfloor} a_n 
+        \]
+        Si \(f:[0,b]\to \mathbb{R}\) tiene derivada continua en \([0,b]\) prueba que 
+        \[
+        \sum_{n=0}^{\lfloor b \rfloor }a_nf(n)=-\int_0^b A(x)f'(x)dx + A(b)f(b)
+        \]
+      </p>
 
 
     </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Usa la fórmula de sumatoria de Euler para probar:
+      </p>
+      <ol>
+        <li>
+          para \(s\ne 1\):
+          \[
+          \sum_{k=1}^n \frac{1}{k^s}=\frac{1}{n^{s-1}}+s\int_1^n \frac{\lfloor x \rfloor }{x^{s+1}}dx 
+          \]
+          
+        </li>
+        <li>
+          \[
+          \sum_{k=1}^n \frac{1}{k}=\log(n)- \int_1^n \frac{x- \lfloor x \rfloor }{x^2}dx+1 
+          \]
+        </li>
+      </ol>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Supón que \(f:[1,2n]\to \mathbb{R}\) es clase \(C^1\). Usa la fórmula de sumatoria de Euler para probar 
+        \[
+        \sum_{k=1}^{2n} (-1)^k f(k)=\int_1^{2n} f'(x)( \lfloor x \rfloor - 2 \lfloor x/2 \rfloor ) dx
+        \] 
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Si \(f:[a,b]\to \mathbb{R}\) es clase \(C^1\) prueba que \(f\in R_{\sen(f)}[a,b]\) y 
+        \[
+        \int_a^b f d\sen(f)= f(b)\sen(f(b))-f(a)\sen(f(a))+cos(f(b))-\cos(f(a)).
+        \]
+      </p>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(\varphi:[a,b]\to \mathbb{R}\) no negativa y monótona creciente. 
+        Si \(h:[a,b]\to \mathbb{R}\) es continua, entonces existe \(c\in [a,b]\) tal que 
+        \[
+        \int_a^b \varphi(x)h(x)dx=\varphi(a)\int_a^ch(x)dx.
+        \]
+      </p>
+      <p>
+        ¿Se vale el mismo resultado si \(\varphi\) es monótona decreciente?
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((\alpha_n)_{n=1}^\infty \subset BV[a,b]\). Supón que existe 
+        \(\alpha \in BV[a,b]\) tal que \(\lim_{n\to \infty}V_a^b(\alpha-\alpha_n)=0\) y 
+        además \(\alpha_n(a)=\alpha(a)=0\), para toda \(n\in \mathbb{N}\).
+      </p>
+      <p>
+        Si \(f:[a,b]\to \mathbb{R}\) 
+        es continua prueba que 
+        \[
+        \lim_{n\to \infty} \int_a^b f d\alpha_n = \int_a^b fd\alpha.
+        \]
+      </p>
+    </div>
+    
+  </div>
+
   </body>
   </html>
