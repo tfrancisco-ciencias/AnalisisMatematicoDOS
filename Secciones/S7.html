@@ -73,7 +73,7 @@
 
   <body class="flexbox card fondo-body">
 
-    <h1 class="number-title flexbox"> Conjuntos </h1>
+    <h1 class="number-title flexbox"> Series de Fourier </h1>
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
@@ -81,37 +81,337 @@
       
 
 
-        <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
             <p>
-              Prueba que si \(A\) es infinito y \(B\) es contable
-              entonces \(A\) y \(A\cup B\) son equivalentes.
+              Dada una función \(f:D\to \mathbb{R}\) un periodo para \(f\) es un escalar \(T\) para el cual 
+              \[
+              f(x+T)=f(x)
+              \]
+              para todo \(x\in D\) (donde se entiende que \(x+T\in D\) también). También se sigue que 
+              si \(T\) es un periodo de \(f\) entonces todo número de la forma \(kT\), \(k=0,1,2,\)
+              también es un periodo, asi que el periodo no es único. 
             </p>
             <p>
-              Sugerencia: usar el ejercicio anterior para "acomodar"
-              a \(B\) en una parte de \(A\).
+              Una función se llama periódica si tiene tiene un periodo. Si \(f\) es una función periódica 
+              y existe un periodo \(T_0\) para el cual \(T_0\leq T\) para cualquier otro periodo positivo \(T\), 
+              a \(T_0\) le llamamos periodo fundamental o básico.
+            </p>
+            <p>
+              Por ejemplos las funciones \(\sen,\cos\) y \(\tan\) tienen periodo  fundamental \(2\pi\). 
+            </p>
+            <p>
+              Notas: 
+              <p>
+                Si \(f\) tiene periodo \(T\) y tenemos la gráfica de \(f\) en el intervalo 
+              \([a.a+T]\) entonces la gráfica se repite en todo los intervalos siguientes:
+              \([a+T,a+2T],[a+2T,a+3T],\dots\). 
+              </p>
+              <p>
+                Si la función \(f\) es integrable en un intervalo de la forma \([a,a+T]\) entonces es integrable en todo 
+                intervalo de la forma \([a+kT,a+(k+1)T]\) y 
+                \[
+                \int_a^{a+T}f(x)dx=\int_{a+kT}^{a+(k+1)T}f(x)dx.
+                \]
+              </p>
+              
             </p>
           </div>
 
 
 
-        <div class="ejercicio-box">
-          <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Prueba que si \(A\) es infinito y \(B\) es contable
-            entonces \(A\) y \(A\cup B\) son equivalentes.
-          </p>
-          <p>
-            Sugerencia: usar el ejercicio anterior para "acomodar"
-            a \(B\) en una parte de \(A\).
-          </p>
-        </div>
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Si \(f:\mathbb{R}\to \mathbb{R}\) tiene periodo \(T\) prueba que 
+              \[
+              f(x)=f(x-kT)
+              \]
+              para todo \(k\in \mathbb{N}\).
+            </p>
 
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(T\in \mathbb{R}\) fijo y denotamos por \(V\) a todas la funciones de 
+              \(\mathbb{R}\) en \(\mathbb{R}\) con periodo \(T\). Prueba:
+              <ol>
+                <li>
+                  \(V\) un espacio vectorial y contiene a todas las funciones constantes.
+                </li>
+                <li>
+                  \(V\) es una subalgebra de funciones. 
+                </li>
+                <li>
+                  \(V\) es una retícula.
+                </li>
+              </ol>
+            </p>
+          </div>
+
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Una función de la forma 
+              \[
+              f(x)=A\sen(\omega x + \theta )
+              \]
+              donde \(A,\omega, \theta\) son constantes, con \(\omega \ne 0\), se llama armónica básica de amplitud
+              \(|A|\), frecuencia \(\omega\) y fase inicial \(\theta\).
+            </p>
+            <p>
+              Nota: siempre podemos pedir \(\omega > 0\) pues si no es así podemos reescribir
+              \(A\sen(\omega x + \theta)=-A\sen(\omega x - \theta)\).
+            </p>
+            <p>
+              El periodo fundamental de ésta función es \(T=\frac{2\pi}{\omega}\).
+            </p>
+            
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <ol>
+              <li>
+                Prueba que la función \(\cos(x)\) puede escribirse como una  función armónica básica.
+              </li>
+              <li>
+                Prueba que toda función armónica básica \(A\sen(\omega x +\theta )\) puede escribirse de la forma 
+                \[
+                a\cos(\omega x)+ b \sen(\omega x)
+                \]
+                para ciertas constantes \(a,b\).
+              </li>
+              <li>
+                Inversamente toda función de la forma \(a\cos(\omega x)+ b\sen(\omega x)\) puede escribirse 
+                como una función armónica básica con periodo fundamental \(T=\frac{2\pi}{\omega}\).
+              </li>
+            </ol>
+            <p>
+              Sugerencia: usa las fórmulas para el seno y coseno de una suma.
+            </p>
+          </div>
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Una función de la forma 
+              \[
+              A+\sum_{k=1}^n \left( a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
+              \]
+              donde \(a_n^2+b_n^2\neq 0\) (es decir, \(a_n\ne 0\) ó \(b_n\ne 0\)) se llama un polinomio 
+              trigonométrico de orden \(n\) y periodo \(2l\).
+            </p>
+            <p>
+              Si 
+              \[
+              f(x)=A+  \sum_{k=1}^n \left(a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
+              \]
+              es un polinomio trigonométrico de periodo \(2l\) entonces la función 
+              \[
+              g(t)=f\left(\frac{lt}{\pi}\right)=A+\sum_{k=1}^n \left( a_k\cos(kt)+b_k\sen(kt)\right)
+              \]
+              es un polinomio trigonométrico de periodo \(2\pi\). Inversamente si \(g(t)\)
+              es un polinomio trigonométrico de periodo \(2\pi\) entonces \(f(x)=g(\pi x/l)\) es un polinomio 
+              trigonométrico de periodo \(2l\). Así pues es equivalente estudiar polinomios trigonométricos de  cualquier 
+              periodo así que no enfocaremos en aquellos con periodo \(2\pi\).
+            </p>
+          </div>
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              El sistema trigonométrico básico es conjunto  de funciones 
+              \[
+              \{1\}\cup \{\cos(kt) : k\in \mathbb{N}\}\cup \{\sen(kt): k\in \mathbb{N}\}
+              \]
+              Es importante notar que todas estas funciones tienen \(2\pi\) como periodo y 
+              es una base para los polinomios trigonométricos de periodo \(2\pi\).
+
+            </p>
+          </div>
+
+          <div class="prop-box">
+            <h2 class="number-title" id="Prop:RelOrtogonalidad"> Proposición </h2>
+            <h3> Relaciones de ortogonalidad </h3>
+            <p>
+              Para \(n\) un entero distinto de cero:
+              <ul>
+                <li>
+                    \[ \int_{-\pi}^{\pi} \cos(nt)dt=0 \]
+                </li>
+                <li>
+                  \[\int_{-\pi}^{\pi} \sen(nt)dt=0  \]
+                </li>
+              </ul>
+              
+            </p>
+            
+            <p>
+              Para \(n\ne m\) enteros:
+              <ul>
+                <li>
+                  \[ \int_{-\pi}^{\pi} \cos(nt)\cos(mt)dt=0 \]
+                </li>
+                <li>
+                  \[ \int_{-\pi}^{\pi} \sen(nt)\sen(mt)dt=0 \]
+                </li>
+                <li>
+                  \[\int_{-\pi}^{\pi} \cos(nt)\sen(mt)dt=0 \]
+                </li>
+              </ul>
+            </p>
+              
+            <p>
+              Para \(n\) un entero distinto de cero:
+              <ul>
+                <li>
+                  \[ \int_{-\pi}^{\pi}\cos^2(nt)dt=\pi \]
+                </li>
+                <li>
+                  \[ \int_{-\pi}^{\pi}\sen^2(nt)dt=\pi \]
+                </li>
+              </ul>
+            </p>
+          </div>
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Dos funciones \(f,g:[a,b]\to \mathbb{R}\) integrables se llaman ortogonales si 
+              \[
+              \int_{a}^b f(t)g(t)dt=0
+              \]
+            </p>
+
+            <p>
+              Con esta nomenclatura la <a href="Prop:RelOrtogonalidad"> Proposición 7.8</a> dice que 
+              las funciones del sistema trigonométrico básico son ortogonales dos a dos.
+            </p>
+          </div>
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Dada \(f:[a,b]\to \mathbb{R}\) una función integrable se definen los coeficientes de Fourier,
+              con respecto al sistema trigonométrico básico, como 
+              \[
+              \begin{eqnarray*} 
+              a_0&=&\frac{1}{\pi} \int_{-\pi}^{\pi} f(t)dt \\
+              a_k&=&\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\cos(kt)dt \\
+              b_k&=&\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sen(kt)dt \\
+              \end{eqnarray*}
+              \]
+              Nota: la misma fórmula para \(a_k\) funciona para \(a_0\) (pues \(\cos(0)=1\)) pero se puso 
+              aparte para enfatizar que \(a_0\) da el término constante del polinomio trigonométrico que más 
+              adelante se convertirá en la serie de Fourier.
+            </p>
+            <p>
+              ¿Porqué se definen así los coeficientes de Fourier? Una respuesta la da el siguiente teorema.
+            </p>  
+          </div>
+
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+              Supongamos que la función \(f(x)\) se puede aproximar  con 
+              un límite de polinomio trigonométricos de la forma 
+              \[
+              f(x)=\frac{\alpha_0}{2}+\sum_{k=1}^\infty \left( \alpha_k\cos(kt)+\beta_k\sen(kt) \right)
+              \]
+              donde la convergencia es uniforme en \([-\pi,\pi]\). Es decir 
+              la sucesión \((s_n)_{n=1}^\infty\) converge uniformemente 
+              a \(f\) en \([-\pi,\pi]\), donde \(s_n(x)=\alpha_0/2+\sum_{k=1}^n \left( 
+                \alpha_k\cos(kt)+\beta_k\sen(kt) \right)\). 
+              Entonces 
+              
+              \[
+              \begin{eqnarray*} 
+              \alpha_0&=&\frac{1}{\pi} \int_{-\pi}^{\pi} f(t)dt \\
+              \alpha_k&=&\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\cos(kt)dt \\
+              \beta_k&=&\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sen(kt)dt \\
+              \end{eqnarray*}
+              \]
+              que son precisamente los coeficientes de Fourier de \(f\) con respecto al sistema trigonométrico 
+              básico.
+            </p>
+
+            <button class="respButton hvr-grow"> Demostración  </button>
+          <div class="resp-box flexbox">
+            
+              <p>
+                Fijamos un entero \(m\geq 1\).
+              </p>
+            <p> 
+              Por las propiedades de la convergencia uniforme con respecto a la integral tenemos
+              \[
+              \int_{-\pi}^\pi f(x)\cos(mx)dx = \lim_{n\to \infty} \int_{-\pi}^{\pi}s_n(x)\cos(mx)dx, 
+              \]
+              pero por las <a href="#Prop:RelOrtogonalidad">relaciones de ortogonalidad</a> resulta 
+              que si \(n> m\) entonces 
+              \[
+              \begin{eqnarray*}
+              \int_{-\pi}^{\pi} s_n(x)\cos(mx)dx&=&A\int_{-\pi}^{\pi}\cos(mx)dx \\
+              &+& \sum_{k=1}^n \alpha_k\int_{-\pi}^{\pi} \cos(kx)\cos(mx)dx \\
+              &+& \sum_{k=1}^n \beta_k\int_{-\pi}^{\pi} \sen(kx)\cos(mx)dx  \\
+              &=& \alpha_m\int_{-\pi}^{\pi} \cos^2(mx)dx \\
+              &=& \alpha_m\pi
+              \end{eqnarray*}
+              \]
+              y obtenemos 
+              \[
+              \begin{eqnarray*} 
+              \int_{-\pi}^\pi f(x)\cos(mx)dx=\lim_{n\to \infty} \int_{-\pi}^{\pi}s_n(x)\cos(mx)dx 
+              = \alpha_m \pi 
+              \end{eqnarray*}
+              \]
+              para concluir
+              \[
+              \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos(mx)dx=\alpha_m.
+              \]
+              De manera similar se puede obtener que 
+              \[
+              \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sen(mx)dx=\beta_m.
+              \]
+            </p>
+            <p>
+              Para \(\alpha_0\) usando nuevamente la convergencia uniforme si integramos la serie 
+              \[
+              f(x)=\frac{\alpha_0}{2}+\sum_{k=1}^\infty \left( \alpha_k\cos(kt)+\beta_k\sen(kt) \right)
+              \]            
+              término a término y usamos las <a href="#Prop:RelOrtogonalidad">relaciones de ortogonalidad</a> 
+              llegamos a 
+              \[
+              \begin{eqnarray*} 
+              \int_{-\pi}^{\pi} f(x)dx&=&\frac{\alpha_0}{2} \int_{-\pi}^{\pi} 1 dx \\
+              &+& \sum_{k=1}^\infty \alpha_k\int_{-\pi}^{\pi}\cos(kx)dx \\
+              &+& \sum_{k=1}^\infty \beta_k\int_{-\pi}^{\pi}\sen(kx)dx \\
+              &=&\frac{\alpha_0}{2}(2\pi)\\
+              &=& \alpha_0 \pi
+              \end{eqnarray*}
+              \]
+              y concluimos 
+              \[
+              \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)dx=\alpha_0
+              \]
+            </p>
+        
+          </div>
+
+          </div>
 
 
 
     </div>
-
   </body>
-
   </html>
