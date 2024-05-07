@@ -204,7 +204,7 @@
             <p>
               Una función de la forma 
               \[
-              A+\sum_{k=1}^n \left( a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
+              a_0+\sum_{k=1}^n \left( a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
               \]
               donde \(a_n^2+b_n^2\neq 0\) (es decir, \(a_n\ne 0\) ó \(b_n\ne 0\)) se llama un polinomio 
               trigonométrico de orden \(n\) y periodo \(2l\).
@@ -212,17 +212,51 @@
             <p>
               Si 
               \[
-              f(x)=A+  \sum_{k=1}^n \left(a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
+              f(x)=a_0+  \sum_{k=1}^n \left(a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
               \]
               es un polinomio trigonométrico de periodo \(2l\) entonces la función 
               \[
-              g(t)=f\left(\frac{lt}{\pi}\right)=A+\sum_{k=1}^n \left( a_k\cos(kt)+b_k\sen(kt)\right)
+              g(t)=f\left(\frac{lt}{\pi}\right)=a_0+\sum_{k=1}^n \left( a_k\cos(kt)+b_k\sen(kt)\right)
               \]
               es un polinomio trigonométrico de periodo \(2\pi\). Inversamente si \(g(t)\)
               es un polinomio trigonométrico de periodo \(2\pi\) entonces \(f(x)=g(\pi x/l)\) es un polinomio 
               trigonométrico de periodo \(2l\). Así pues es equivalente estudiar polinomios trigonométricos de  cualquier 
               periodo así que no enfocaremos en aquellos con periodo \(2\pi\).
             </p>
+          </div>
+
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(\mathcal{T}\) el conjunto de polinomios trigonométricos de periodo \(2\pi\). Es decir \(f \in \mathcal{T}\)
+              si y sólo si existe \(n\in \mathbb{N}, a_0,a_1,\dots, a_n, b_1,\dots, b_n \in \mathbb{R}\) tal que
+              \[
+              f(x)=a_0+\sum_{k=1}^n \left( a_k\cos(kx)+b_k\sen(kx)\right)
+              \]
+            </p>
+            <p>
+              Prueba que \(\mathcal{T}\) es una subálgebra de funciones que no se anula en \([-\pi,\pi]\).
+            </p>
+          </div>
+
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(\mathcal{T}\) el conjunto de polinomios trigonométricos de periodo \(2\pi\).
+            </p>
+            <p>
+              Por \(C^{2\pi}(\mathbb{R})\) denotamos al conjunto de funciones continuas de 
+              \(\mathbb{R}\) en \(\mathbb{R}\) de periodo \(2\pi\). 
+            </p>
+            <p>
+              Entonces \(\mathcal{T}\) es uniformemente denso en \(C^{2\pi}(\mathbb{R})\). Es decir, 
+              para toda función continua y de periodo \(2\pi\), \(h:\mathbb{R}\to 
+              \mathbb{R}\), existe \(f \in \mathcal{T}\) tal que 
+              \[
+              \|h-f\|_{[-\pi,\pi]}< \varepsilon.
+              \]
+            </p>
+
           </div>
 
 
@@ -327,12 +361,12 @@
               Supongamos que la función \(f(x)\) se puede aproximar  con 
               un límite de polinomio trigonométricos de la forma 
               \[
-              f(x)=\frac{\alpha_0}{2}+\sum_{k=1}^\infty \left( \alpha_k\cos(kt)+\beta_k\sen(kt) \right)
+              f(x)=\frac{\alpha_0}{2}+\sum_{k=1}^\infty \left( \alpha_k\cos(kx)+\beta_k\sen(kx) \right)
               \]
               donde la convergencia es uniforme en \([-\pi,\pi]\). Es decir 
               la sucesión \((s_n)_{n=1}^\infty\) converge uniformemente 
               a \(f\) en \([-\pi,\pi]\), donde \(s_n(x)=\alpha_0/2+\sum_{k=1}^n \left( 
-                \alpha_k\cos(kt)+\beta_k\sen(kt) \right)\). 
+                \alpha_k\cos(kx)+\beta_k\sen(kx) \right)\). 
               Entonces 
               
               \[
