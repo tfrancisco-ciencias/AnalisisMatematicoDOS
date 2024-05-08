@@ -84,12 +84,12 @@
         <div class="definicion-box">
             <h2 class="number-title"> Definición </h2>
             <p>
-              Dada una función \(f:D\to \mathbb{R}\) un periodo para \(f\) es un escalar \(T\) para el cual 
+              Dada una función \(f:D\to \mathbb{R}\) un periodo para \(f\) es un escalar \(T\ne 0\) para el cual 
               \[
               f(x+T)=f(x)
               \]
               para todo \(x\in D\) (donde se entiende que \(x+T\in D\) también). También se sigue que 
-              si \(T\) es un periodo de \(f\) entonces todo número de la forma \(kT\), \(k=0,1,2,\)
+              si \(T\) es un periodo de \(f\) entonces todo número de la forma \(kT\), \(k=1,2,\)
               también es un periodo, asi que el periodo no es único. 
             </p>
             <p>
@@ -136,7 +136,7 @@
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \(T\in \mathbb{R}\) fijo y denotamos por \(V\) a todas la funciones de 
+              Sea \(T\in \mathbb{R}\), \(T\ne 0\), fijo y denotamos por \(V\) a todas la funciones de 
               \(\mathbb{R}\) en \(\mathbb{R}\) con periodo \(T\). Prueba:
               <ol>
                 <li>
@@ -166,7 +166,7 @@
             </p>
             <p>
               Nota: siempre podemos pedir \(\omega > 0\) pues si no es así podemos reescribir
-              \(A\sen(\omega x + \theta)=-A\sen(\omega x - \theta)\).
+              \(A\sen(\omega x + \theta)=-A\sen(-\omega x - \theta)\).
             </p>
             <p>
               El periodo fundamental de ésta función es \(T=\frac{2\pi}{\omega}\).
@@ -212,26 +212,32 @@
             <p>
               Si 
               \[
-              f(x)=a_0+  \sum_{k=1}^n \left(a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
+              s(x)=a_0+  \sum_{k=1}^n \left(a_k\cos\left(\frac{k\pi}{l}x\right)+ b_k\sin\left(\frac{k\pi}{l}x\right) \right)
               \]
               es un polinomio trigonométrico de periodo \(2l\) entonces la función 
               \[
-              g(t)=f\left(\frac{lt}{\pi}\right)=a_0+\sum_{k=1}^n \left( a_k\cos(kt)+b_k\sen(kt)\right)
+              \sigma(t)=s\left(\frac{lt}{\pi}\right)=a_0+\sum_{k=1}^n \left( a_k\cos(kt)+b_k\sen(kt)\right)
               \]
-              es un polinomio trigonométrico de periodo \(2\pi\). Inversamente si \(g(t)\)
-              es un polinomio trigonométrico de periodo \(2\pi\) entonces \(f(x)=g(\pi x/l)\) es un polinomio 
+              es un polinomio trigonométrico de periodo \(2\pi\). Inversamente si \(\sigma(t)\)
+              es un polinomio trigonométrico de periodo \(2\pi\) entonces \(s(x)=\sigma(\pi x/l)\) es un polinomio 
               trigonométrico de periodo \(2l\). Así pues es equivalente estudiar polinomios trigonométricos de  cualquier 
               periodo así que no enfocaremos en aquellos con periodo \(2\pi\).
+            </p>
+            <h3>
+              Ejemplos de polinomios trigonométricos, de grado menor o igual a 3.
+            </h3>
+            <p>
+              <a href="https://www.desmos.com/calculator/9howkacd9y" target=”_blank” > Ejemplos en desmos </a>
             </p>
           </div>
 
           <div class="ejercicio-box"> 
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \(\mathcal{T}\) el conjunto de polinomios trigonométricos de periodo \(2\pi\). Es decir \(f \in \mathcal{T}\)
+              Sea \(\mathcal{T}\) el conjunto de polinomios trigonométricos de periodo \(2\pi\). Es decir \(s\in \mathcal{T}\)
               si y sólo si existe \(n\in \mathbb{N}, a_0,a_1,\dots, a_n, b_1,\dots, b_n \in \mathbb{R}\) tal que
               \[
-              f(x)=a_0+\sum_{k=1}^n \left( a_k\cos(kx)+b_k\sen(kx)\right)
+              s(x)=a_0+\sum_{k=1}^n \left( a_k\cos(kx)+b_k\sen(kx)\right)
               \]
             </p>
             <p>
@@ -250,12 +256,24 @@
             </p>
             <p>
               Entonces \(\mathcal{T}\) es uniformemente denso en \(C^{2\pi}(\mathbb{R})\). Es decir, 
-              para toda función continua y de periodo \(2\pi\), \(h:\mathbb{R}\to 
-              \mathbb{R}\), existe \(f \in \mathcal{T}\) tal que 
+              para toda función continua y de periodo \(2\pi\), \(f:\mathbb{R}\to 
+              \mathbb{R}\), existe \(s \in \mathcal{T}\) tal que 
               \[
-              \|h-f\|_{[-\pi,\pi]}< \varepsilon.
+              \|f-s\|_{[-\pi,\pi]}< \varepsilon.
               \]
             </p>
+            <p> Notas </p>
+            <ol>
+              <li>
+                Por la periodicidad de las funciones el intervalo \([-\pi,\pi]\) en el resultado anterior 
+                se puede cambiar por cualquier otro intervalo de longitud \(2\pi\).
+              </li>
+              <li>
+                Este teorema dice que podemos aproximar funciones de periodo \(2\pi\) con polinomios trigonométricos. Las 
+                series de Fourier van más allá pues dan condiciones y un método para poder hacer esta aproximación. La 
+                llave para poder calcular las aproximaciones son <a href="#Prop:RelOrtogonalidad" >las relaciones de ortogonalidad</a>.
+              </li>
+            </ol>
 
           </div>
 
@@ -298,6 +316,12 @@
                 <li>
                   \[ \int_{-\pi}^{\pi} \sen(nt)\sen(mt)dt=0 \]
                 </li>
+                
+              </ul>
+            </p>
+            <p>
+              Para \(n,m\) enteros distintos de cero cualesquiera: 
+              <ul>
                 <li>
                   \[\int_{-\pi}^{\pi} \cos(nt)\sen(mt)dt=0 \]
                 </li>
@@ -334,7 +358,7 @@
           </div>
 
           <div class="definicion-box">
-            <h2 class="number-title"> Definición </h2>
+            <h2 class="number-title" id="Def:CoefFourier"> Definición </h2>
             <p>
               Dada \(f:[a,b]\to \mathbb{R}\) una función integrable se definen los coeficientes de Fourier,
               con respecto al sistema trigonométrico básico, como 
@@ -441,10 +465,122 @@
             </p>
         
           </div>
+          </div>
 
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+              Sea \(f:\mathbb{R} \to \mathbb{R}\)  una función de periodo \(2\pi\) integrable
+              en \([-\pi,\pi]\). Definimos la serie de 
+              Fourier de \(f\), con respecto al sistema trigonométrico básico, como 
+              \[
+              a_0+\sum_{k=1}^{\infty}(a_k\cos(kx)+ b_k \sen(kx))
+              \]
+              donde \(\{a_k\}_{k=0}^\infty \cup \{ b_k\}_{k=1}^\infty\) son los 
+              <a href="#Def:CoefFourier">coeficientes de Fourier</a> de 
+              \(f\).
+            </p>
+            <p>
+              Una de las aportaciones más importantes de Fourier es encontrar condiciones, sobre la 
+              función \(f\), para la cual se tenga 
+              \[
+              f(x)=a_0+\sum_{k=1}^{\infty}(a_k\cos(kx)+ b_k \sen(kx))
+              \]
+              tanto convergencia  puntual y/o uniforme.
+            </p>
           </div>
 
 
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <h3> Extensiones periódicas </h3>
+            <p>
+              Analizar funciones periódicas al principio parece algo restrictivo pero en realidad no lo es.
+            </p>
+            <p>
+              Supongamos que tenemos dada una función \(f:[-\pi,\pi]\to \mathbb{R}\) 
+              y queremos analizarla usando series de Fourier. No es periódica pero 
+              podemos extenderla a una función que sí lo sea (simplemente copiando su gráfica).
+            </p>
+            <p>Caso 1</p>
+            <p>
+              Tenemos que \(f(-\pi)=f(\pi)\). Entonces repitiendo los valores de \(f\) hacia la izquierda y derecha, en intervalos de 
+              longitud \(2\pi\) obtenmos una extensión de \(f\) a todo  \(\mathbb{R}\) la cual es de periodo \(2\pi\).
+            </p>
+            <p>
+              Por ejemplo \(f(x)=(\frac{x}{\pi})^2\), para \(x\in [-\pi,\pi]\). Su extensión se ve
+            </p>
+            <p>Caso 2 </p>
+            <p>
+              Si \(f(\pi)\ne f(\pi)\) tenemos que hacer algo diferente. En este caso podemos tomar dos caminos.
+            </p>
+            <p>
+              Primer método: extendenmos periódicamente la función \(f(x)\) pero sólo desde el intervalo  \((-\pi,\pi)\),
+              dejando los valores de la extensión indefinidos en todos los puntos de la forma \(x=k\pi\), \(k\in \mathbb{Z}\).
+            </p>
+            <p>
+              Segundo método: redefinimos la función \(f\) en alguno de los extremos \(x=-\pi\) ó \(x=\pi\)
+              para que sean iguales y entonces tener el caso \(f(-\pi)=f(\pi)\).
+            </p>
+
+            <p> Es imporante notar que en cualquiera de los dos métodos los coeficientes de Fourier de \(f\)
+              no cambian pues sólo se modifica la función en un número finito de puntos por lo que el valor de 
+              la integral de Riemann no cambia.
+            </p>
+            <p>
+              Por ejemplo para \(f(x)=x\), \(x\in [-\pi,\pi]\), podemos redefinir \(f(x)=x\), para 
+              \(x\in [-\pi,\pi) \) y \(f(\pi)=-\pi\). En este caso la extensión se ve
+            </p>
+          </div>
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición</h2>
+            <p>
+             Sea  \(f:[a,b]\to \mathbb{R}\)  una función tal que todas sus discontinuidades, de existir, son 
+             discontinuidades de salto. Por lo que los límites  
+             \(\lim_{x\to x_0^+}f(x)\) y \(\lim_{x\to x_0^-}f(x)\) siempre existe 
+             para todo \(x_0 \in [a,b] \). Denotamos 
+             \[
+             f(x_0^+)=\lim_{x\to x_0^+}f(x), \quad f(x_0^-)=\lim_{x\to x_0^-}f(x)
+             \]
+            </p>
+            <p>
+              Dado \(x_0\in [a,b]\) definimos su derivada lateral derecha en \(x_0\) como 
+              \[
+              \lim_{h\to 0^+} \frac{f(x_0+h)-f(x_0^+)}{h}
+              \]
+              y su derivada lateral izquierda en \(x_0\) como 
+              \[
+              \lim_{h\to 0^-} \frac{f(x_0+h)-f(x_0^-)}{h}
+              \]
+              siempre y cuando los límites existan. Denotamos a estas derivadas como 
+              \(f'_+(x_0)\) y \(f'_-(x_0)\) respectivamente.
+            </p>
+
+
+          </div>
+
+          <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+              Sea \(f\) una función de periodo \(2\pi\) con a lo más una cantidad finita de puntos 
+              de discontinuidad, todos ellos discontinuidades de salto.
+            </p>
+            <p>
+              Si \(f\) es continua en \(x\) y ambas derivadas laterales existen en \(x\) entonces 
+              \[
+              f(x)=\frac{a_0}{2}+\sum_{k=1}^\infty (a_k\cos(kx)+b_k\sen(kx))
+              \]
+            </p>
+            <p>
+              Si \(f\) es discontinua en \(x\) y ambas derivadas laterales existen en \(x\) entonces
+              \[
+              \frac{f(x^+)+f(x^-)}{2}=\frac{a_0}{2}+\sum_{k=1}^\infty (a_k\cos(kx)+b_k\sen(kx))
+              \]
+              Por último, si la función es clase \(C^1\) en \([a,b]\) la convergencia es uniforme.
+            </p>
+          </div>
 
     </div>
   </body>
