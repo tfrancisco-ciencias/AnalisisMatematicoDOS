@@ -493,48 +493,6 @@
 
 
           <div class="definicion-box">
-            <h2 class="number-title"> Definición </h2>
-            <h3> Extensiones periódicas </h3>
-            <p>
-              Analizar funciones periódicas al principio parece algo restrictivo pero en realidad no lo es.
-            </p>
-            <p>
-              Supongamos que tenemos dada una función \(f:[-\pi,\pi]\to \mathbb{R}\) 
-              y queremos analizarla usando series de Fourier. No es periódica pero 
-              podemos extenderla a una función que sí lo sea (simplemente copiando su gráfica).
-            </p>
-            <p>Caso 1</p>
-            <p>
-              Tenemos que \(f(-\pi)=f(\pi)\). Entonces repitiendo los valores de \(f\) hacia la izquierda y derecha, en intervalos de 
-              longitud \(2\pi\) obtenmos una extensión de \(f\) a todo  \(\mathbb{R}\) la cual es de periodo \(2\pi\).
-            </p>
-            <p>
-              Por ejemplo \(f(x)=(x)^2\), para \(x\in [-\pi,\pi]\). Su extensión se ve
-            </p>
-            <p>Caso 2 </p>
-            <p>
-              Si \(f(\pi)\ne f(\pi)\) tenemos que hacer algo diferente. En este caso podemos tomar dos caminos.
-            </p>
-            <p>
-              Primer método: extendenmos periódicamente la función \(f(x)\) pero sólo desde el intervalo  \((-\pi,\pi)\),
-              dejando los valores de la extensión indefinidos en todos los puntos de la forma \(x=k\pi\), \(k\in \mathbb{Z}\).
-            </p>
-            <p>
-              Segundo método: redefinimos la función \(f\) en alguno de los extremos \(x=-\pi\) ó \(x=\pi\)
-              para que sean iguales y entonces tener el caso \(f(-\pi)=f(\pi)\).
-            </p>
-
-            <p> Es imporante notar que en cualquiera de los dos métodos los coeficientes de Fourier de \(f\)
-              no cambian pues sólo se modifica la función en un número finito de puntos por lo que el valor de 
-              la integral de Riemann no cambia.
-            </p>
-            <p>
-              Por ejemplo para \(f(x)=x\), \(x\in [-\pi,\pi]\), podemos redefinir \(f(x)=x\), para 
-              \(x\in [-\pi,\pi) \) y \(f(\pi)=-\pi\). En este caso la extensión se ve
-            </p>
-          </div>
-
-          <div class="definicion-box">
             <h2 class="number-title"> Definición</h2>
             <p>
              Sea  \(f:[a,b]\to \mathbb{R}\)  una función tal que todas sus discontinuidades, de existir, son 
@@ -562,9 +520,10 @@
           </div>
 
           <div class="teorema-box">
-            <h2 class="number-title"> Teorema </h2>
+            <h2 class="number-title" id="Teo:Condicion1ConvergenciaSF"> Teorema </h2>
             <p>
-              Sea \(f\) una función de periodo \(2\pi\) con a lo más una cantidad finita de puntos 
+              Sea \(f\) una función de periodo \(2\pi\), tal que en un intervalo de longitud \(2\pi\) \(f\)
+              tiene a lo más una cantidad finita de puntos 
               de discontinuidad, todos ellos discontinuidades de salto.
             </p>
             <p>
@@ -578,9 +537,103 @@
               \[
               \frac{f(x^+)+f(x^-)}{2}=\frac{a_0}{2}+\sum_{k=1}^\infty (a_k\cos(kx)+b_k\sen(kx))
               \]
-              Por último, si la función es clase \(C^1\) en \([a,b]\) la convergencia es uniforme.
+              Por último, si la función es continua  en \([a,b]\)  y ambas derivadas 
+              laterales existen en todo punto de \([a,b]\), la convergencia es uniforme en \([a,b]\).
             </p>
           </div>
+
+
+
+          <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <h3> Extensiones periódicas </h3>
+            <p>
+              Analizar funciones periódicas al principio parece algo restrictivo pero en realidad no lo es.
+            </p>
+            <p>
+              Supongamos que tenemos dada una función \(f:[-\pi,\pi]\to \mathbb{R}\) 
+              y queremos analizarla usando series de Fourier. No es periódica pero 
+              podemos extenderla a una función que sí lo sea (simplemente copiando su gráfica).
+            </p>
+            <p>Caso 1</p>
+            <p>
+              Tenemos que \(f(-\pi)=f(\pi)\). Entonces repitiendo los valores de \(f\) hacia la izquierda y derecha, en intervalos de 
+              longitud \(2\pi\) obtenmos una extensión de \(f\) a todo  \(\mathbb{R}\) la cual es de periodo \(2\pi\).
+            </p>
+            <p>
+              Por ejemplo \(f(x)=x^2\), para \(x\in [-\pi,\pi]\). Su extensión se ve
+
+                <div class="flexbox">
+                  <img src="./Images/Sec7-img1.png" alt="ExtensionPeriodicaCuadratica" width="40%" height="auto">
+                </div>
+            </p>
+            <p>Caso 2 </p>
+            <p>
+              Si \(f(\pi)\ne f(\pi)\) tenemos que hacer algo diferente. En este caso podemos tomar dos caminos.
+            </p>
+            <p>
+              Primer método: extendenmos periódicamente la función \(f(x)\) pero sólo desde el intervalo  \((-\pi,\pi)\),
+              dejando los valores de la extensión indefinidos en todos los puntos de la forma \(x=k\pi\), \(k\in \mathbb{Z}\).
+            </p>
+            <p>
+              Segundo método: redefinimos la función \(f\) en alguno de los extremos \(x=-\pi\) ó \(x=\pi\)
+              para que sean iguales y entonces tener el caso \(f(-\pi)=f(\pi)\).
+            </p>
+
+            <p> Es imporante notar que en cualquiera de los dos métodos los coeficientes de Fourier de \(f\)
+              no cambian pues sólo se modifica la función en un número finito de puntos por lo que el valor de 
+              la integral de Riemann no cambia.
+            </p>
+            <p>
+              Por ejemplo para \(f(x)=x\), \(x\in [-\pi,\pi]\), podemos redefinir \(f(x)=x\), para 
+              \(x\in (-\pi,\pi) \) y \(f(\pi+2\pi k)=-\pi\), para todo \(k\in \mathbb{Z}\). 
+              En este caso la extensión se ve
+              <div class="flexbox">
+                  <img src="./Images/Sec7-img2.png" alt="ExtensionPeriodicaIdentidad" width="40%" height="auto">
+                </div>
+            </p>
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para la extensión periódica de \(f(x)=x^2\), en \(x\in [-\pi,\pi]\) encuentra:
+              <ol>
+                <li>
+                  La serie de Fourier de \(f\).
+                </li>
+                <li>
+                  Usando el <a href="#Teo:Condicion1ConvergenciaSF">Teorema 7.16 </a>, encuentra los puntos donde la serie de Fourier 
+                  converge puntualmente a \(f\), los intervalos donde converge uniformemente 
+                  a \(f\).
+                </li>
+              </ol>
+            </p>
+          </div>
+
+
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para la extensión periódica de la identidad, dada por \(f(x)=x\) en \(x\in (-\pi,\pi)\) y 
+             \(f(-\pi+2\pi k)=-\pi\), para toda \(k\in \mathbb{Z}\), encuentra:
+              <ol>
+                <li>
+                  La serie de Fourier de \(f\).
+                </li>
+                <li>
+                  Usando el <a href="#Teo:Condicion1ConvergenciaSF">Teorema 7.16 </a>, encuentra los puntos donde la serie de Fourier 
+                  converge puntualmente a \(f\), los intervalos donde converge uniformemente 
+                  a \(f\).
+                </li>
+              </ol>
+            </p>
+          </div>
+
+
 
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
@@ -618,6 +671,7 @@
               </li>
             </ol>
           </div>
+
 
     </div>
   </body>
