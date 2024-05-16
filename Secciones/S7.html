@@ -638,8 +638,21 @@
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Una función \(f\) se llama par si \(f(-x)=f(x)\) para todo \(x\) en el dominio de la función
-              y se llama impar si \(f(-x)=-f(x)\) para todo \(x\) en el dominio de la función. 
+              Una función \(f\) se llama par si \(f(-x)=f(x)\) para todo \(x\) en el dominio de la función. Es decir, si
+              su gráfica es simétrica con respecto el eje \(y\).
+
+                <div class="flexbox">
+                  <img src="./Images/Sec7-img3.png" alt="ExtensionPeriodicaCuadratica" width="40%" height="auto">
+                </div>
+              
+            </p>
+            <p>
+              Una función \(f\) se llama impar si \(f(-x)=-f(x)\) para todo \(x\) en el dominio de la función. Es decir, si su 
+              gráfica es simétrica con respecto al origen.
+              
+                <div class="flexbox">
+                  <img src="./Images/Sec7-img4.png" alt="ExtensionPeriodicaCuadratica" width="40%" height="auto">
+                </div>
             </p>
             <p>
               Nota:
@@ -669,10 +682,186 @@
                 \int_{-a}^a f(t)dt=2\int_0^a f(t)dt.
                 \]
               </li>
+              <li>
+                Concluye que si \(f\) es una función par entonces los 
+                coeficientes de Fourier de \(f\) satisfacen
+                \[
+                b_k=0, a_k = \frac{2}{\pi}\int_0^{\pi}f(t)\cos(k t)dt
+                \]
+                para  todo \(k\in \mathbb{N}\) y por lo tanto la serie de Fourier de \(f\) se ve 
+                \[
+                \frac{a_0}{2}+\sum_{k=1}^\infty a_k \cos(kx)
+                \]
+              </li>
+              <li>
+                Concluye que si \(f\) es una función impar entonces los 
+                coeficientes de Fourier de \(f\) satisfacen
+                \[
+                a_k=0, b_k = \frac{2}{\pi}\int_0^{\pi}f(t)\sen(k t)dt
+                \]
+                para  todo \(k\in \mathbb{N}\) y por lo tanto la serie de Fourier de \(f\) se ve 
+                \[
+                \sum_{k=1}^\infty b_k \sin(kx)
+                \]
+              </li>
             </ol>
           </div>
 
 
+
+            <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para la extensión periódica de \(f(x)=x^2\) en \(x\in (0,2\pi)\), encuentra:
+              <ol>
+                <li>
+                  La serie de Fourier de \(f\).
+                </li>
+                <li>
+                  Usando el <a href="#Teo:Condicion1ConvergenciaSF">Teorema 7.16 </a>, encuentra los puntos donde la serie de Fourier 
+                  converge puntualmente a \(f\), los intervalos donde converge uniformemente 
+                  a \(f\).
+                </li>
+              </ol>
+            </p>
+          </div>
+
+
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para la extensión periódica de la identidad, dada por \(f(x)=x\) en \(x\in (0,2\pi)\), encuentra:
+              <ol>
+                <li>
+                  La serie de Fourier de \(f\).
+                </li>
+                <li>
+                  Usando el <a href="#Teo:Condicion1ConvergenciaSF">Teorema 7.16 </a>, encuentra los puntos donde la serie de Fourier 
+                  converge puntualmente a \(f\), los intervalos donde converge uniformemente 
+                  a \(f\).
+                </li>
+              </ol>
+            </p>
+          </div>
+
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Para la extensión periódica de cada una de las siguientes funciones, encuentra:
+              <ul>
+                <li>
+                  La serie de Fourier de \(f\).
+                </li>
+                <li>
+                  Usando el <a href="#Teo:Condicion1ConvergenciaSF">Teorema 7.16 </a>, encuentra los puntos donde la serie de Fourier 
+                  converge puntualmente a \(f\), los intervalos donde converge uniformemente 
+                  a \(f\).
+                </li>
+              </ul>
+            </p>
+            <ol>
+              <li>
+                \(f(x)=e^{cx}\), donde \(x\in (-\pi,\pi)\) y \(c\) es una consante distinta de cero.
+              </li>
+              <li>
+                \(f(x)=\cos(c x)\), donde \(x\in (-\pi,\pi)\) y \(c\) es una consante distinta de cero.
+              </li>
+              <li>
+                \(f(x)=\sen(c x)\), donde \(x\in (-\pi,\pi)\) y \(c\) es una consante distinta de cero.
+              </li>
+            </ol>
+          </div>
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Encuentra las series de Fourier de las extensiones periódicas de las siguientes funciones.
+            </p>
+            <ol>
+              <li>
+                Coseno hiperbólico 
+                \[
+                \frac{e^x+e^{-x}}{2}, \quad x\in (-\pi,\pi).
+                \]
+              </li>
+                
+              <li>
+                Seno hiperbólico
+                \[
+                \frac{e^x-e^{-x}}{2}, \quad x\in (-\pi,\pi).
+                \]
+              </li>
+            </ol>
+          </div>
+          
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(f:\mathbb{R}\to \mathbb{R}\) una función integrable de periodo \(2\pi\). Asume que 
+              \(f\) es Lipschitz de orden \(\alpha >0\), es decir existe una constante \(M>0\) tal que 
+              \[
+              |f(x)-f(y)|\leq M |x-y|^\alpha
+              \]
+              para todos \(x,y\in \mathbb{R}\).
+            </p>
+            <p>
+              Prueba que los coeficientes de Fourier de \(f\) satisfacen 
+              \[
+              |a_n|\leq \frac{M\pi^\alpha}{n^\alpha} \quad |b_n|\leq \frac{M\pi^\alpha}{n^\alpha}
+              \]
+
+            </p>
+            <p>
+              Concluye que para \(\alpha > 1\) la serie de Fourier de \(f\) converge absolutamente y uniformemente en todo 
+              \(\mathbb{R}\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(f:\mathbb{R}\to \mathbb{R}\) una función integrable de periodo \(2\pi\) con serie de 
+              Fourier 
+              \[
+              \frac{a_0}{2}+\sum_{k=1}^\infty (a_k \cos(kx)+ b_k\sen(kx))
+              \]
+            </p>
+
+            <p>
+              Define 
+              \[
+              f_i(x)=\frac{f(x)-f(-x)}{2}, \quad f_p(x)=\frac{f(x)+f(-x)}{2}
+              \]
+            </p>
+            <ol>
+              <li>
+                Prueba que \(f_i\) es una función impar de periodo \(2\pi\) con serie de Fourier 
+                \[
+                \sum_{k=1}^\infty  b_k\sen(kx).
+                \]
+              </li>
+              <li>
+                Prueba que \(f_p\) es una función par de periodo \(2\pi\) con serie de Fourier 
+                \[
+                \frac{a_0}{2}+\sum_{k=1}^\infty a_k \cos(kx).
+                \]
+              </li>
+              <li>
+                Prueba que la serie de Fourier de \(f(x-\pi)\) es 
+                \[
+                \frac{a_0}{2}+\sum_{k=1}^\infty (-1)^k (a_k\cos(kx)+ b_k\sen(kx)).
+                \]
+              </li>
+            </ol>
+            
+          </div>
     </div>
   </body>
   </html>
