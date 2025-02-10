@@ -71,7 +71,7 @@
 
 </head>
 
-  <body class="flexbox card fondo-body">
+  <body class="flexbox  fondo-body">
 
     <h1 class="number-title flexbox"> Convergencia puntual y uniforme </h1>
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
@@ -82,11 +82,8 @@
       <div class="info-box">
         <h2 class="number-title"> Introducción </h2>
         <p>
-          Desde este punto en adelante en el curso nos enfocaremos en espacios de funciones. 
-          Es decir vamos a trabajar en espacios métricos donde cada punto 
-          es una función.  Muy en particular vamos a estudiar sucesiones
-          de funciones y los distitos tipos de convergencia que surgen para estas sucesiones.
-          Las dos más importantes para el resto del curso son convergencia puntual y uniforme.
+          
+
         </p>
       </div>
 
@@ -108,8 +105,8 @@
           \[
           |f_n(a)-f(a)|< \varepsilon 
           \]
-          Nota: la \(N\) va a depender tanto de \(\varepsilon>0 \) 
-          como de \(a\in A\).
+          Nota: la \(N\) va a depender tanto de \(\varepsilon \) 
+          como de \(a\).
         </p>
         
         <h3>Ejemplos </h3>
@@ -163,14 +160,14 @@
         <p>
           Nota. En esta definición  
           se puede substituir a \(\mathbb{R}\) 
-          por cualquier espacio métrico, \((Y,\rho)\). 
-          Con este cambio la sucesión 
+          por cualquier \(\mathbb{R}^n\) y entonces 
           \((f_n)_{n=1}^\infty\) converge 
           puntualmente a \(f\) en \(A\) si 
           para toda \(a\in A\) y toda 
           \(\varepsilon>0\) existe \(N\in \mathbb{N}\)
-          tal que \(\rho(f_n(a), f(a)) < \varepsilon\) 
-          para toda \(n\geq N\).
+          tal que \(\| f_n(a) -  f(a)\| < \varepsilon\) 
+          para toda \(n\geq N\) (nota ahora que tanto \(f_n(a)\) 
+          como \(f(a)\) son vectores).
         </p>
       </div>
 
@@ -408,28 +405,19 @@
              <li>
                Para la convergencia uniforme no es necesario pedir
                al domino de las funciones (denotado por
-               \(X\) arriba) que sea espacio métrico.
+               \(X\) arriba) ningún tipo de estructura. Más adelante le daremos 
+               más estructura a \(X\) para obtener más resultados sobre las sucesiones 
+               de funciones.
              </li>
              <li>
                El codominio de las funciones no tiene que ser necesariamente
-               \(\mathbb{R}\) y se puede cambiar por cualquier espacio métrico.
-               Si \((Y,\rho)\) es un espacio métrico, decimos que una
-               sucesión de funciones \((f_n:X\to Y)_{n=1}^\infty\) converge
-               uniformemente a \(f\) en \(A\) si:
-               <p>
-                 Para toda \(\varepsilon >0\), existe una \(N\in \mathbb{N}\)
-                 con la propiedad de que, para toda \(a \in A\) y toda \(n \geq N\):
-                 \[
-                 \rho(f_n(a),f(a)) < \varepsilon 
-                 \]
-                 donde la única diferencia es que se usa la distancia en el espacio \(Y\)
-                 en vez del valor absoluto.
-               </p>
+               \(\mathbb{R}\) y se puede cambiar por cualquier \(\mathbb{R}^n\) y en tal caso 
+               los valores absolutos se cambian por normas.
              </li>
              <li>
                La convergencia uniforme depende mucho del dominio de las funciones.
-               Puede pasar que una sucesión no sea uniformemente convergente en \(A\)
-               pero sí sea uniformemente convergente en otros subconjuntos de \(X\).
+               Puede pasar que una sucesión no sea uniformemente convergente en unos subconjuntos del dominio
+               pero sí sea uniformemente convergente en otros.
              </li>
 
              <li>
@@ -445,11 +433,11 @@
              <h2 class="number-title"> Nota </h2>
              <h3 > Convergencia uniforme y la norma uniforme </h3>
            <p>
-             Otra forma de reescribir la convergencia uniforme es
-             con la norma uniforme o norma infinito. Recordamos que para una
-             función \(g:X\to \mathbb{R}\) acotada
+             Otra forma de reescribir la convergencia uniforme es utilizando lo que se conoce como 
+             la norma uniforme o norma infinito. Dada una función \(g:X\to \mathbb{R}\) acotada 
+             y \(A\subseteq X\) denotamos 
              \[
-             \|g\|_X:=\sup_{x\in X}\{|g(x)| \}
+             \|g\|_A:=\sup_{a\in A}\{|g(a)| \}
              \]
              Si el dominio es claro también se escribe \(\|g\|_\infty\).
              Con esta notación se puede escribir la convergencia
@@ -475,22 +463,7 @@
              claro que el problema importante es calcular los números
              \(\|f_n-f\|_A\).
            </p>
-           <!-- <p>
-             En la <a href=""> Nota 3.19</a> vimos una forma de visualizar
-             la bolas abiertas en la norma \(\|\cdot\|_\infty\),
-             \[
-             B_r(f)=\{g:X\to \mathbb{R}: \| g-f\|< r \}.
-             \]
-             Una función \(g\) está en la bola si y sólo si su gráfica esta
-             en la franja de radio \(r\) centrada en \(f\).
 
-             Por lo tanto, ya que la convergencia uniforme se puede
-             puede escribir como \(\lim_{n\to \infty}\|f_n-f\|_\infty=0\),
-             podemos pensar que una sucesión \((f_n)_{n=1}^\infty\)
-             converge uniformemente a \(f\) si las gráficas de
-             \(f_n\) se van metiendo en franjas alrededor de \(f\) de
-             radios cada vez más pequeños.
-           </p>-->
            <p>
              Ejemplos.
            </p>
@@ -521,6 +494,28 @@
                y por lo tanto \(\lim_{n\to \infty}\|f_n-f\|_{[a,b]} = 0\).
              </li>
            </ol>
+
+
+           <p>
+            El número \(\|\cdot\|_A\) se llama norma uniforme porque cumple 
+            las propiedades de una norma (cuyas pruebas se dejan de ejercicio):
+            <ol>
+              <li>
+                Para toda función, \(\|f\|_A \geq 0 \).
+              </li>
+              <li>
+                Para toda función, \(\|f\|_A=0\) si y sólo si 
+                \(f\) es idénticamente cero en \(A\).
+              </li>
+              <li>
+                Para cuales quiera funciones acotadas en \(A\), \(f,g:A\to \mathbb{R}\) 
+                y escalar \(\alpha\):
+                \[
+                \|\alpha f+ g \|_A \leq |\alpha|\|f\|_A+\|g\|_A.
+                \]
+              </li>
+            </ol>
+           </p>
         </div>
 
 
@@ -549,8 +544,8 @@
           <h2 class="number-title"> Ejercicio </h2>
           <ol>
             <li>
-              Sea  \(X\) un conjunto, \(A\subseteq X\) y \((Y,\rho)\) un espacio 
-              métrico. Prueba que la sucesión de funciones \((f_n:X\to Y)_{n=1}^\infty\) 
+              Sea  \(X\) un conjunto, \(A\subseteq X\). 
+              Prueba que la sucesión de funciones \((f_n:X\to \mathbb{R}^n)_{n=1}^\infty\) 
                NO
               converge uniformemente en \(A\)  a la función
               \(f\) si y sólo si
@@ -559,15 +554,16 @@
               y una sucesión  \((a_n)_{n=1}^\infty \subset A \)
               que satisface
               \[
-              \rho(f_{n_k}(a_k), f(a_{k})) \geq \varepsilon_0
+              \| f_{n_k}(a_k)- f(a_{k})\| \geq \varepsilon_0
               \]
               para toda \(k \geq 1\).
             </li>
             <li>
-              Usa esto para dar otra prueba de que la sucesión
+              Usa esto para probar que la sucesión
               \((f_n:\mathbb{R}\to \mathbb{R})_{n=1}^\infty\)
               dada por \(f_n(x)=x^n\), no converge uniformemente 
-              en \((-1,1)\) a la función cero.
+              en \((-1,1)\) a la función cero. Nota: este ejemplo 
+              muestra que convergencia puntual no implica convergencia uniforme.
             </li>
           </ol>
           
@@ -588,7 +584,7 @@
         </div>
 
 
-        <div class="ejercicio-box">
+        <!-- <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
           <p>
             Sea \((X,d)\) un espacio métrico y
@@ -612,7 +608,7 @@
               uniformemente en \(X\) a la función \(f\).
             </li>
           </ol>
-        </div>
+        </div>--> 
 
 
         <!-- <div class="nota-box">
@@ -813,16 +809,15 @@
         <div class="teorema-box">
           <h2 class="number-title" id="Teo:ConveUnifYConti"> Teorema </h2>
           <p>
-            Sean \((X,d), (Y,\rho)\) espacios métricos y
-            \((f_n:X\to Y)_{n=1}^\infty\) una sucesión de funciones tal que
-            cada una de las \(f_n\) es continua en el punto  \(x_0\in X\).
+            Sean \((f_n:[a,b]\to \mathbb{R}^n)_{n=1}^\infty\) una sucesión de funciones tal que
+            cada una de las \(f_n\) es continua en el punto  \(x_0\in [a,b]\).
           </p>
           <p>
-            Si \((f_n)_{n=1}^\infty\) converge uniformemene en \(X\)
+            Si \((f_n)_{n=1}^\infty\) converge uniformemene en \([a,b]\)
             a una función \(f\), entonces \(f\) también es continua en \(x_0\).
           </p>
           <p>
-            En particular, si las \(f_n\) son continuas en todo \(X\)
+            En particular, si las \(f_n\) son continuas en todo \([a,b]\)
             también \(f\) lo es.
           </p>
           <button class="respButton hvr-grow"> Demostración </button>
@@ -834,26 +829,26 @@
             Primero, usamos la convergencia uniforme de \((f_n)_{n=1}^\infty\)
             para asegurar que existe una \(N\in \mathbb{N}\) tal que 
             \begin{equation}\label{Eqn:Aux1ConvergenciaUnifCont}
-            \rho(f(x),f_n(x)) < \varepsilon
+            \|f(x)-f_n(x)\| < \varepsilon
             \end{equation}
-            para todo \(x\in X\) y todo \(n\geq N\).
+            para todo \(x\in [a,b]\) y todo \(n\geq N\).
           </p>
           <p>
             Segundo, usando que \(f_N\) es continua en \(x_0\) 
             aseguramos que existe una \(\delta > 0\) tal que 
             \begin{equation}\label{Eqn:Aux2ConvergenciaUnifCont}
-            \rho(f_N(x),f_N(x_0))< \varepsilon
+            \| f_N(x)-f_N(x_0)\|< \varepsilon
             \end{equation}
-            siempre que \(x\in X\) con \(d(x,x_0)< \delta\).
+            siempre que \(x\in [a,b]\) con \(|x-x_0|< \delta\).
           </p>
           <p>
             Finalmente, juntanto \eqref{Eqn:Aux1ConvergenciaUnifCont} 
-            y \eqref{Eqn:Aux2ConvergenciaUnifCont}, para \(x\in X\) con \(d(x,x_0)< \delta \) se tiene:
+            y \eqref{Eqn:Aux2ConvergenciaUnifCont}, para \(x\in [a,b]\) con \(|x-x_0|< \delta \) se tiene:
           </p>
           <p>
             \begin{eqnarray*} 
-            \rho(f(x),f(x_0)) &\leq & \rho(f(x),f_N(x)) + \rho(f_N(x),f_N(x_0))+ \rho(f_N(x_0),f(x_0)) \\
-            & < &  \varepsilon + \rho(f_N(x),f_N(x_0)) +\varepsilon  \\
+            \| f(x) -f(x_0)|  &\leq & \| f(x)- f_N(x)\| + \| f_N(x)-f_N(x_0)\|+ \| f_N(x_0)-f(x_0)\| \\
+            & < &  \varepsilon + \| f_N(x) -f_N(x_0)\| +\varepsilon  \\
             & < & 3\varepsilon
             \end{eqnarray*}
           </p>
@@ -864,13 +859,13 @@
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
           <p>
-            Sean \((X,d), (Y,\rho)\) espacios métricos y
-            \((f_n:X\to Y)_{n=1}^\infty\) una sucesión de funciones continuas
-            tal que convergen uniformemente en \(X\).
+            Sea
+            \((f_n:[a,b]\to \mathbb{R}^n)_{n=1}^\infty\) una sucesión de funciones continuas
+            tal que convergen uniformemente en \([a,b]\).
           </p>
           <p>
-            Sea \((x_m)_{m=1}^\infty \subset X\) una sucesión  convergente
-            en \(X\). Prueba
+            Sea \((x_m)_{m=1}^\infty \subset [a,b]\) una sucesión  convergente
+            en \([a,b]\). Prueba
             \[
             \lim_{n\to \infty}\left( \lim_{m\to \infty} f_n(x_m)\right)=
             \lim_{m\to \infty}\left( \lim_{n\to \infty} f_n(x_m)\right)
@@ -1030,85 +1025,67 @@
         </div>
 
 
-        <div class="definicion-box">
-          <h2 class="number-title"> Definición </h2>
-          <p>
-            Sea \(X\) un conjunto cualquiera y 
-            \((Y,\rho)\) un espacio métrico. Decimos que una
-            sucesión de funciones \((f_n:X\to Y)_{n=1}^\infty\)
-            es uniformemente de Cauhcy (o Cauchy-uniforme) en \(X\) si:
-          </p>
-          <p>
-            para toda \(\varepsilon > 0 \) existe \(N\in \mathbb{N}\)
-            con la propiedad de que, para todo \(x\in X\) y  para todos \(n,m \geq N\)
-            \[
-            \rho(f_n(x),f_m(x)) < \varepsilon 
-            \]
-          </p>
-
-        </div>
-
 
         <div class="teorema-box">
           <h2 class="number-title"> Teorema </h2>
           <p>
-            Sea \((Y,\rho)\) un espacio métrico completo y \(X\) un conjunto cualquiera.
+            Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones
+            continuas en \([a,b]\) y tal que su derivada, \(f_n'\), existe y
+            es continua en todo \([a,b]\).
           </p>
           <p>
-            Sea \((f_n:X\to Y)_{n=1}^\infty\) es una sucesión
-            de funciones que es uniformemente de Cauchy en \(X\).
+            Supongamos que
+            <ol>
+              <li>
+                \((f_n')\) converge uniformemente en \([a,b]\) a una
+                función \(g:[a,b]\to \mathbb{R}\).
+              </li>
+              <li>
+                Existe un punto \(x_0\in [a,b]\) tal que
+                la sucesión \((f_n(x_0))_{n=1}^\infty\) converge.
+              </li>
+            </ol>
           </p>
           <p>
-            Entonces existe \(f:X\to Y\) tal que
-            \((f_n)_{n=1}^\infty\) converge uniformemente a \(f\) en \(X\).
-          </p>
-
-        </div>
-
-
-        <div class="coro-box">
-          <h2 class="number-title"> Corolario </h2>
-          <p>
-            Sea \(X\ne \emptyset\) un conjunto y \((Y,\rho)\) un espacio métrico completo.
-          </p>
-          <p>
-            Por \(B(X,Y)\) denotamos al conjunto de funciones acotadas de \(X\) en \(Y\) dotada con la 
-            métrica uniforme
+            Entonces la sucesión original, \((f_n)_{n=1}^\infty\), converge
+            uniformemente en \([a,b]\). Además, si  \(f\) es el límite de
+            \((f_n)_{n=1}^\infty\) entonces \(f\) es diferenciable y
+            \(f'=g\). Es decir, podemos meter el límite en la derivada
             \[
-            d_\infty(f,g)=\sup_{x\in X}\{ \rho(f(x),g(x)) \}
+            \lim_{n\to \infty} \frac{d}{dx}f_n(x) =
+            \frac{d}{dx}\left( \lim_{n\to \infty} f_n (x) \right)
             \]
-          </p>
-          <p>
-            Entonces \((B(X,Y), d_\infty)\) es un espacio métrico completo.
-          </p>
-          <p>
-            Por \(C_b(X,Y)\) denotamos al conjunto de funciones continuas y acotadas de \(X\) en \(Y\)
-            dotada con la métrica uniforme. Entonces \((C_b(X,Y),d_\infty)\) es un espacio métrico completo.
           </p>
         </div>
 
 
-<!--         <div class="ejercicio-box">
-          <h2 class="number-title"> Ejercicio </h2>
 
+        <div class="teorema-box">
+          <h2 class="number-title" id="Teo:Dini"> Teorema </h2>
+          <h3> Teorema de Dini </h3>
           <p>
-            Sea \((X,d)\) un espacio métrico compacto. Por
-            \(C(X)\) denotamos las funciones continuas en \(X\) que toman
-            valores reales. Por el
-            <a href="./S8.html#"Teo:FunContAcotEnCompactos>Teorema 8.18</a>
-            sabemos que toda función \(f\) en \(C(X)\) está acotada y por
-            lo tanto
-            \[
-            \|f\|_\infty =\sup_{x\in X}\{|f(x)|\}
-            \]
-            está bien definida y por el
-            <a href="./S3.html#Ejer:EspacioFunAcotadas">Ejercicio 3.18</a> es una norma.
-          </p>
-          <p>
-            Prueba que \((C(X), \|\cdot\|_\infty)\) es un espacio completo.
+            Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones continuas en \([a,b]\).
+            Supón que: 
+            <ol>
+              <li>
+                para todo \(x\in [a,b]\) y  para todo \(n\in \mathbb{N}\) se cumple:
+                 \[ f_{n+1}(x) \leq f_n(x)\]
+              </li>
+              <li>
+                para todo \(x\in [a,b]\) el límite \(\lim_{n\to \infty}f_n(x)\) existe y la función 
+                \(f:[a,b]\to \mathbb{R}\) definida por 
+                \[
+                f(x)=\lim_{n\to \infty} f_n(x)
+                \]
+                es continua en \([a,b]\).
+              </li>
+            </ol> 
+            <p>
+              Entonces \((f_n)_{n=1}^\infty\) converge uniformemente a \(f\) en \([a,b]\).
+            </p>
           </p>
 
-        </div>-->
+        </div>
 
 
         <div class="teorema-box">
@@ -1159,37 +1136,6 @@
 
         </div>
 
-        <div class="teorema-box">
-          <h2 class="number-title"> Teorema </h2>
-          <p>
-            Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones
-            continuas en \([a,b]\) y tal que su derivada, \(f_n'\), existe y
-            es continua en todo \([a,b]\).
-          </p>
-          <p>
-            Supongamos que
-            <ol>
-              <li>
-                \((f_n')\) converge uniformemente en \([a,b]\) a una
-                función \(g:[a,b]\to \mathbb{R}\).
-              </li>
-              <li>
-                Existe un punto \(x_0\in [a,b]\) tal que
-                la sucesión \((f_n(x_0))_{n=1}^\infty\) converge.
-              </li>
-            </ol>
-          </p>
-          <p>
-            Entonces la sucesión original, \((f_n)_{n=1}^\infty\), converge
-            uniformemente en \([a,b]\). Además, si  \(f\) es el límite de
-            \((f_n)_{n=1}^\infty\) entonces \(f\) es diferenciable y
-            \(f'=g\). Es decir, podemos meter el límite en la derivada
-            \[
-            \lim_{n\to \infty} \frac{d}{dx}f_n(x) =
-            \frac{d}{dx}\left( \lim_{n\to \infty} f_n (x) \right)
-            \]
-          </p>
-        </div>
 
         <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
@@ -1306,84 +1252,9 @@
         </div>
 
 
-        <div class="teorema-box">
-          <h2 class="number-title" id="Teo:Dini"> Teorema </h2>
-          <h3> Teorema de Dini </h3>
-          <p>
-            Sea \((f_n:[a,b]\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones continuas en \([a,b]\).
-            Supón que: 
-            <ol>
-              <li>
-                para todo \(x\in [a,b]\) y  para todo \(n\in \mathbb{N}\) se cumple:
-                 \[ f_{n+1}(x) \leq f_n(x)\]
-              </li>
-              <li>
-                para todo \(x\in [a,b]\) el límite \(\lim_{n\to \infty}f_n(x)\) existe y la función 
-                \(f:[a,b]\to \mathbb{R}\) definida por 
-                \[
-                f(x)=\lim_{n\to \infty} f_n(x)
-                \]
-                es continua en \([a,b]\).
-              </li>
-            </ol> 
-            <p>
-              Entonces \((f_n)_{n=1}^\infty\) converge uniformemente a \(f\) en \([a,b]\).
-            </p>
-          </p>
-
-        </div>
 
 
 
-        <div class="teorema-box">
-          <h2 class="number-title" id="Teo:Dini"> Teorema </h2>
-          <h3> Teorema de Dini (versión espacios métricos compactos) </h3>
-          <p>
-            Sea \(X\) un espacio métrico compacto.
-          </p>
-          <p>
-            Sea \((f_n:X\to \mathbb{R})_{n=1}^\infty\) una sucesión de funciones continuas en \(X\).
-            Supón que: 
-            <ol>
-              <li>
-                para todo \(x\in X\) y  para todo \(n\in \mathbb{N}\) se cumple:
-                 \[ f_{n+1}(x) \leq f_n(x)\]
-              </li>
-              <li>
-                para todo \(x\in X\) el límite \(\lim_{n\to \infty}f_n(x)\) existe y la función 
-                \(f:X\to \mathbb{R}\) definida por 
-                \[
-                f(x)=\lim_{n\to \infty} f_n(x)
-                \]
-                es continua en \(X\).
-              </li>
-            </ol> 
-            <p>
-              Entonces \((f_n)_{n=1}^\infty\) converge uniformemente a \(f\) en \(X\).
-            </p>
-          </p>
-
-        </div>
-
-        <div class="ejercicio-box">
-          <h2 class="number-title"> Ejercicio </h2>
-          <p>
-            Por \(C^{(1)}([a,b])\) denotamos al conjunto de funciones
-            \(f:[a,b]\to \mathbb{R}\) con las propiedades de que:
-            <ul>
-            <li> \(f\) es continua en todo \([a,b]\),</li>
-            <li> \(f'\) existe y es continua en todo \([a,b]\).</li>
-          </ul>
-          </p>
-          <p>
-          Para  \(f\in C^{(1)}([a,b])\) definimos
-          \[
-          \|f\|_{C^{(1)}}=\max_{x\in [a,b]}\{|f(x)|\}+\max_{x\in [a,b]}\{ |f'(x)|\}
-          \]
-          Prueba que el espacio \((C^{(1)}([a,b]),\|\cdot\|_{C^{(1)}})\)
-          es completo.
-          </p>
-        </div>
 
     </div>
 
@@ -1394,7 +1265,7 @@
   <ol>
       <li>
         <p>
-          Sea \((X,d)\) un espacio métrico y considera dos sucesiones 
+          Sea \(X\) un conjunto no vacío y considera dos sucesiones de funciones 
           \((f_n:X\to \mathbb{R})_{n=1}^\infty, (g_n:X\to \mathbb{R})_{n=1}^\infty\) tal que 
           \(f_n \to f\)  y \(g_n \to g\)  uniformemente en \(X\).
         </p>
